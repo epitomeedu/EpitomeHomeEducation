@@ -30,85 +30,36 @@
 
     .accent { font-family: 'Cinzel', serif; }
 
-    /* header tagline specific classes */
-    .epitome-gold {  
-      color: var(--gold-honey);  
-      font-family: 'Quattrocento', serif;  
-      font-size:18px;  
-    }
+    .epitome-gold { color: var(--gold-honey); font-family: 'Quattrocento', serif; font-size:18px; }
+    .tag-teal { color: var(--teal-ocean); font-family: 'Cinzel', serif; font-size:11px; }
 
-    .tag-teal {  
-      color: var(--teal-ocean);  
-      font-family: 'Cinzel', serif;  
-      font-size:11px;  
-    }
-
-    /* small helpers */
-    .btn-gold {  
-      background:var(--gold-honey);  
-      color:var(--teal-ocean);  
-    }
-
+    .btn-gold { background:var(--gold-honey); color:var(--teal-ocean); }
     .btn-gold:hover { filter:brightness(.95); }
 
-    .table-custom th {  
-      background:var(--green-lily);  
-      color:white;  
-    }
+    .table-custom th { background:var(--green-lily); color:white; }
+    .table-custom td { background:var(--table-shade); color:var(--teal-ocean); }
 
-    .table-custom td {  
-      background:var(--table-shade);  
-      color:var(--teal-ocean);  
-    }
+    .logo-img { height: 76px; width: auto; }
+    @media (min-width:1024px){ .logo-img { height: 90px; } }
 
-    /* responsive logo sizing */
-    .logo-img {
-      height: 76px;
-      width: auto;
-    }
-
-    @media (min-width:1024px){
-      .logo-img { height: 90px; }
-    }
-
-    /* Hero section styling */
     .hero {
       background-image: url('https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/3c47ad772030a0616d12a940a28ed6536563297f/IMG_20251201_103157.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      min-height: 600px; /* taller hero */
+      min-height: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-    }
-
-    .hero-overlay {
-      background-color: rgba(0,0,0,0.45);
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-    }
-
-    .hero-content {
       position: relative;
-      z-index: 10;
-      color: white;
     }
 
-    /* Mobile Menu Cleanup */
-    .mobile-nav a {
-      color: var(--teal-ocean);
-      font-size: 16px;
-      padding: 10px;
-      text-align: center;
-      border-bottom: 1px solid var(--teal-ocean);
-    }
+    .hero-overlay { background-color: rgba(0,0,0,0.45); position: absolute; inset: 0; }
+    .hero-content { position: relative; z-index: 10; color: white; }
 
-    .mobile-nav a:hover {
-      background-color: var(--gold-honey);
-      color: white;
-    }
+    .mobile-nav a { color: var(--teal-ocean); font-size: 16px; padding: 10px; text-align: center; border-bottom: 1px solid var(--teal-ocean); }
+    .mobile-nav a:hover { background-color: var(--gold-honey); color: white; }
   </style>
 </head>
 
@@ -117,20 +68,20 @@
 <!-- HEADER -->
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-    <!-- logo left -->
-    <div class="flex items-center space-x-4">
-      <img class="logo-img" src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg" alt="Epitome Education Logo">
-    </div>
+    <img class="logo-img" src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg" alt="Epitome Education Logo">
 
     <!-- navigation right (desktop) -->
-    <nav class="hidden md:flex items-center space-x-6 text-sm accent" aria-label="Main Navigation">
-      <a href="#home" class="hover:text-var(--green-lily) text-[15px]" style="color:var(--teal-ocean);">Home</a>
-      <a href="#enrollment" class="hover:text-green-lily text-[15px]" style="color:var(--teal-ocean);">Enrollment Forms</a>
-      <a href="#tuition" class="hover:text-green-lily text-[15px]" style="color:var(--teal-ocean);">Tuition & Fees</a>
-      <a href="#handbook" class="hover:text-green-lily text-[15px]" style="color:var(--teal-ocean);">Parent Handbook</a>
-      <a href="#schedules" class="hover:text-green-lily text-[15px]" style="color:var(--teal-ocean);">Classroom Schedules</a>
-      <a href="#events" class="hover:text-green-lily text-[15px]" style="color:var(--teal-ocean);">Events</a>
-      <a href="#contact" class="hover:text-green-lily text-[15px]" style="color:var(--teal-ocean);">Contact</a>
+    <nav class="hidden md:flex items-center space-x-6 text-sm accent">
+      <a href="#home" class="hover:text-var(--green-lily)">Home</a>
+      <a href="#about" class="hover:text-var(--green-lily)">About</a>
+      <a href="#programs" class="hover:text-var(--green-lily)">Programs</a>
+      <a href="#teen" class="hover:text-var(--green-lily)">Teens</a>
+      <a href="#enroll" class="hover:text-var(--green-lily)">Enrollment</a>
+      <a href="#tuition" class="hover:text-var(--green-lily)">Tuition & Fees</a>
+      <a href="#handbook" class="hover:text-var(--green-lily)">Parent Handbook</a>
+      <a href="#schedules" class="hover:text-var(--green-lily)">Classroom Schedules</a>
+      <a href="#events" class="hover:text-var(--green-lily)">Events</a>
+      <a href="#contact" class="hover:text-var(--green-lily)">Contact</a>
       <a href="https://square.link/u/L8TsrbYo" target="_blank" class="ml-2 px-3 py-2 rounded-lg btn-gold font-semibold text-sm">Make a Payment</a>
     </nav>
 
@@ -140,11 +91,14 @@
     </div>
   </div>
 
-  <!-- mobile menu content -->
+  <!-- mobile menu -->
   <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
     <div class="p-4 flex flex-col space-y-2 mobile-nav">
       <a href="#home">Home</a>
-      <a href="#enrollment">Enrollment Forms</a>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#teen">Teens</a>
+      <a href="#enroll">Enrollment</a>
       <a href="#tuition">Tuition & Fees</a>
       <a href="#handbook">Parent Handbook</a>
       <a href="#schedules">Classroom Schedules</a>
@@ -155,13 +109,13 @@
   </div>
 </header>
 
-<!-- Tagline (centered below header) -->
+<!-- Tagline -->
 <div class="max-w-6xl mx-auto text-center mt-2 mb-6">
-  <span class="tag-teal"> enabling parents <span style="font-family:'Cinzel',serif;font-size:15px">&amp;</span> inspiring thought at home</span>
+  <span class="tag-teal">enabling parents & inspiring thought at home</span>
 </div>
 
 <!-- HERO -->
-<section class="hero relative">
+<section class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content max-w-4xl px-4">
     <h1 class="text-4xl md:text-5xl font-bold mb-4">Where Home Education Meets Community</h1>
@@ -173,39 +127,93 @@
   </div>
 </section>
 
-<!-- Tuition & Fees Section -->
-<section id="tuition" class="py-16 px-4">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-6">Tuition & Fees</h2>
-    <img src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/7198473e28eaedee78c5d1e3ca3a35e7c33a72a5/IMG_20251130_002522.jpg" alt="Tuition Image" class="rounded-lg shadow-lg mx-auto mb-6">
-    <p class="text-lg mb-4">Here is an overview of our tuition and fees for the upcoming semester. For detailed information or questions, please feel free to contact us.</p>
-    <div class="flex justify-center gap-4">
-      <a href="#enrollment" class="px-6 py-3 rounded-xl btn-gold font-semibold">View Enrollment Forms</a>
+<!-- About -->
+<section id="about" class="max-w-6xl mx-auto py-20 px-4">
+  <h3 class="text-3xl font-bold mb-6 text-indigo-700">About Epitome Education</h3>
+  <p class="text-lg leading-relaxed">Epitome Education provides a warm, structured, home-based learning environment where children can thrive academically, socially, and emotionally. Our hybrid model supports working parents, homeschool families, and independent teens.</p>
+</section>
+
+<!-- Programs -->
+<section id="programs" class="bg-white py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-3xl font-bold mb-10 text-indigo-700">Programs</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-100 p-6 rounded-2xl shadow">
+        <h4 class="text-xl font-semibold mb-2">Hybrid Homeschool Program (Ages 3–10)</h4>
+        <p>Structured curriculum, socialization, hands-on learning, and full-day care available from 6 AM to 7 PM.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-2xl shadow">
+        <h4 class="text-xl font-semibold mb-2">Before & After School Care</h4>
+        <p>Flexible care for homeschool or traditionally schooled students needing early drop-off or extended afternoon hours.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-2xl shadow">
+        <h4 class="text-xl font-semibold mb-2">Parent Workspace Access</h4>
+        <p>Homeschooling parents can utilize the center for lessons, projects, or quiet study spaces.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- The rest of your content (Core Values, Enrollment, Tuition, Handbook, Schedules, Events, Contact, PDF download) stays the same -->
+<!-- Teen Program -->
+<section id="teen" class="max-w-6xl mx-auto py-20 px-4">
+  <h3 class="text-3xl font-bold mb-6 text-indigo-700">Teen Drop-Off Workspace</h3>
+  <p class="text-lg leading-relaxed">Teens ages 11–18 may use supervised workrooms for independent study, virtual school, or creative projects. All teens must follow the Teen Conduct Agreement for safety and professionalism.</p>
+</section>
+
+<!-- Enrollment -->
+<section id="enroll" class="bg-gray-100 py-20 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6 text-indigo-700">Enrollment</h3>
+    <p class="text-lg leading-relaxed mb-6">We offer year-round enrollment with limited spaces. Families can apply for full-time, part-time, or teen-access programs.</p>
+    <a href="https://square.link/u/L8TsrbYo" target="_blank" class="px-6 py-3 rounded-xl btn-gold font-semibold shadow">Start Enrollment</a>
+  </div>
+</section>
+
+<!-- Tuition & Fees -->
+<section id="tuition" class="py-16 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Tuition & Fees</h2>
+    <img src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/7198473e28eaedee78c5d1e3ca3a35e7c33a72a5/IMG_20251130_002522.jpg" alt="Tuition Image" class="rounded-lg shadow-lg mx-auto mb-6">
+    <p class="text-lg mb-4">Overview of our tuition and fees. Contact us for details.</p>
+  </div>
+</section>
+
+<!-- Schedules -->
+<section id="schedules" class="max-w-6xl mx-auto py-20 px-4 text-center">
+  <h3 class="text-3xl font-bold mb-6 text-indigo-700">Class Schedules</h3>
+  <p class="text-lg">Our detailed classroom schedules for all age groups will be posted soon! Please check back shortly.</p>
+</section>
+
+<!-- Actions -->
+<section id="actions" class="max-w-6xl mx-auto py-20 px-4 text-center">
+  <h3 class="text-3xl font-bold mb-6 text-indigo-700">Get Started</h3>
+  <div class="space-y-6">
+    <a href="mailto:epitomejenn@gmail.com?subject=Schedule%20a%20Tour" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-indigo-700">Schedule a Tour</a>
+    <a href="mailto:epitomejenn@gmail.com?subject=Start%20Enrollment" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-indigo-700">Start Enrollment</a>
+    <a href="mailto:epitomejenn@gmail.com?subject=Membership%20Purchase" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-indigo-700">Purchase Membership</a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-6xl mx-auto py-20 px-4">
+  <h3 class="text-3xl font-bold mb-6 text-indigo-700">Contact Us</h3>
+  <p>Email: <span class="font-semibold">info@epitomeeducation.com</span></p>
+  <p>Phone: <span class="font-semibold">(555) 123-4567</span></p>
+</section>
+
+<!-- Footer -->
+<footer class="bg-indigo-700 text-white py-6 text-center">
+  <p>&copy; <span id="yearSpan"></span> Epitome Education. All rights reserved.</p>
+</footer>
 
 <script>
   // set footer year
-  document.getElementById('yearSpan')?.textContent = new Date().getFullYear();
+  document.getElementById('yearSpan').textContent = new Date().getFullYear();
 
   // mobile menu toggle
   const mobileBtn = document.getElementById('mobileBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   mobileBtn?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-
-  // PDF download
-  const { jsPDF } = window.jspdf;
-  document.getElementById('downloadPdf')?.addEventListener('click', ()=> {
-    const doc = new jsPDF({unit:'pt', format:'a4'});
-    const source = document.getElementById('pdfData');
-    doc.html(source, {
-      callback: function (doc) { doc.save('Epitome_Education_Handbook.pdf'); },
-      x: 20, y: 20, width: 560
-    });
-  });
 </script>
 
 </body>
