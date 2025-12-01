@@ -22,43 +22,43 @@
     --table-shade:#B6DAD1;
   }
 
-  body { 
-    font-family: 'Quattrocento', serif; 
-    color:var(--teal-ocean); 
-    background:#fcfcfc; 
+  body {  
+    font-family: 'Quattrocento', serif;  
+    color:var(--teal-ocean);  
+    background:#fcfcfc;  
   }
 
   .accent { font-family: 'Cinzel', serif; }
 
   /* header tagline specific classes */
-  .epitome-gold { 
-    color: var(--gold-honey); 
-    font-family: 'Quattrocento', serif; 
-    font-size:18px; 
+  .epitome-gold {  
+    color: var(--gold-honey);  
+    font-family: 'Quattrocento', serif;  
+    font-size:18px;  
   }
 
-  .tag-teal { 
-    color: var(--teal-ocean); 
-    font-family: 'Cinzel', serif; 
-    font-size:11px; 
+  .tag-teal {  
+    color: var(--teal-ocean);  
+    font-family: 'Cinzel', serif;  
+    font-size:11px;  
   }
 
   /* small helpers */
-  .btn-gold { 
-    background:var(--gold-honey); 
-    color:var(--teal-ocean); 
+  .btn-gold {  
+    background:var(--gold-honey);  
+    color:var(--teal-ocean);  
   }
 
   .btn-gold:hover { filter:brightness(.95); }
 
-  .table-custom th { 
-    background:var(--green-lily); 
-    color:white; 
+  .table-custom th {  
+    background:var(--green-lily);  
+    color:white;  
   }
 
-  .table-custom td { 
-    background:var(--table-shade); 
-    color:var(--teal-ocean); 
+  .table-custom td {  
+    background:var(--table-shade);  
+    color:var(--teal-ocean);  
   }
 
   /* responsive logo sizing */
@@ -70,6 +70,31 @@
   @media (min-width:1024px){
     .logo-img { height: 90px; }
   }
+
+  /* Hero section styling */
+  .hero {
+    background-image: url('https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/3c47ad772030a0616d12a940a28ed6536563297f/IMG_20251201_103157.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px; /* taller hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    background-color: rgba(0,0,0,0.45);
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    color: white;
+  }
 </style>
 </head>
 
@@ -80,8 +105,7 @@
   <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
     <!-- logo left -->
     <div class="flex items-center space-x-4">
-      <!-- Logo - now set to your GitHub image -->
-      <img class="logo-img" src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg" alt="Epitome Education Logo" />
+      <img class="logo-img" src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg" alt="Epitome Education Logo">
     </div>
 
     <!-- navigation right (desktop) -->
@@ -117,5 +141,47 @@
   </div>
 </header>
 
+<!-- Tagline (centered below header) -->
+<div class="max-w-6xl mx-auto text-center mt-2 mb-6">
+  <span class="tag-teal"> enabling parents <span style="font-family:'Cinzel',serif;font-size:15px">&amp;</span> inspiring thought at home</span>
+</div>
 
+<!-- HERO -->
+<section class="hero relative">
+  <div class="hero-overlay"></div>
+  <div class="hero-content max-w-4xl px-4">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Where Home Education Meets Community</h1>
+    <p class="text-lg md:text-xl mb-6">A hybrid homeschool program and learning center offering full-day care, structured learning, and parent-supported education.</p>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="https://square.link/u/L8TsrbYo" target="_blank" class="px-6 py-3 rounded-xl btn-gold font-semibold shadow">Enroll Now</a>
+      <a href="#handbook" class="px-6 py-3 rounded-xl border-2 border-white text-white hover:bg-white hover:text-black transition">Parent Handbook</a>
+    </div>
+  </div>
+</section>
+
+<!-- The rest of your content (Core Values, Enrollment, Tuition, Handbook, Schedules, Events, Contact, PDF download) stays the same -->
+
+<script>
+  // set footer year
+  document.getElementById('yearSpan')?.textContent = new Date().getFullYear();
+
+  // mobile menu toggle
+  const mobileBtn = document.getElementById('mobileBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileBtn?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+  // PDF download
+  const { jsPDF } = window.jspdf;
+  document.getElementById('downloadPdf')?.addEventListener('click', ()=> {
+    const doc = new jsPDF({unit:'pt', format:'a4'});
+    const source = document.getElementById('pdfData');
+    doc.html(source, {
+      callback: function (doc) { doc.save('Epitome_Education_Handbook.pdf'); },
+      x: 20, y: 20, width: 560
+    });
+  });
+</script>
+
+</body>
+</html>
 
