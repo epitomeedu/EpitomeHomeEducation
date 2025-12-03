@@ -60,7 +60,36 @@
 
     .mobile-nav a { color: var(--teal-ocean); font-size: 16px; padding: 10px; text-align: center; border-bottom: 1px solid var(--teal-ocean); }
     .mobile-nav a:hover { background-color: var(--gold-honey); color: white; }
- 
+ /* Soft Elegant Parallax */
+.hero {
+  background-image: url('https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/3c47ad772030a0616d12a940a28ed6536563297f/IMG_20251201_103157.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeSlideUp 1.8s ease-out forwards;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   </style>
 </head>
 
