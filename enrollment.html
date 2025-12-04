@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrollment • Epitome Education</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --green-lily:#66AC8D;
+      --gold-honey:#F5D66D;
+      --teal-ocean:#368678;
+      --table-shade:#B6DAD1;
+    }
+
+    body {
+      font-family: 'Quattrocento', serif;
+      color: var(--teal-ocean);
+      background: #fcfcfc;
+    }
+
+    .accent { font-family: 'Cinzel', serif; }
+
+    /* Parallax Header */
+    .enroll-hero {
+      background-image: url('https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/a4d3773ad41b74c1050aad96c14921b9f70010d1/1881%20(1).jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 350px;
+      position: relative;
+    }
+    .enroll-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    /* Modal */
+    .modal-bg {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+    }
+    .modal-box {
+      animation: fadeIn .3s ease-out;
+      border: 3px solid var(--gold-honey);
+    }
+    @keyframes fadeIn {
+      from { opacity:0; transform: translateY(-10px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Parallax Header -->
+<header class="enroll-hero flex items-center justify-center">
+  <div class="enroll-overlay"></div>
+  <h1 class="accent text-white text-4xl relative z-10 drop-shadow-lg">
+    Enrollment Information
+  </h1>
+</header>
+
+<!-- Content Section -->
+<section class="max-w-5xl mx-auto px-6 py-12">
+  <h2 class="accent text-3xl text-teal-ocean mb-6">Begin Your Journey With Us</h2>
+
+  <p class="mb-4">
+    At Epitome Education, we believe in supporting families with high–quality resources,
+    individualized guidance, and community-focused learning experiences. Below you can  
+    access the full admissions application and next steps.
+  </p>
+
+  <ul class="list-disc ml-6 mb-8 space-y-2">
+    <li>Review the Admissions Handbook</li>
+    <li>Complete the Application Form</li>
+    <li>Submit required documents</li>
+    <li>Schedule your family interview</li>
+  </ul>
+
+  <!-- Open Modal Button -->
+  <button onclick="openModal()" class="px-6 py-3 rounded-lg font-semibold shadow btn-gold">
+    View Application Form
+  </button>
+</section>
+
+<!-- Modal -->
+<div id="pdfModal" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
+  <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-3xl w-full relative">
+    <button onclick="closeModal()" class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">
+      ×
+    </button>
+
+    <h2 class="accent text-2xl mb-4 text-teal-ocean">Enrollment Application</h2>
+
+    <iframe 
+      src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/b6f012a45ca698aa05e8dab86bc225d3324aca57/Admissions%20Application%20-%20Sheet1-4.pdf"
+      class="w-full h-[600px] rounded border border-teal-ocean">
+    </iframe>
+
+    <a href="thankyou.html" class="mt-6 inline-block px-5 py-3 btn-gold rounded-lg font-semibold shadow">
+      Submit Application
+    </a>
+  </div>
+</div>
+
+<!-- Modal Script -->
+<script>
+  function openModal(){
+    document.getElementById("pdfModal").style.display = "flex";
+  }
+  function closeModal(){
+    document.getElementById("pdfModal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
