@@ -151,6 +151,15 @@
     </div>
   </div>
 </header>
+  
+<!-- Close mobile menu when any link is clicked -->
+<script>
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.add('hidden');
+    });
+  });
+</script>
 
 <!-- Tagline -->
 <div class="max-w-6xl mx-auto text-center mt-2 mb-6">
