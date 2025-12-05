@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width">
   <title>Enrollment • Epitome Education</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Signature Pad -->
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.6/dist/signature_pad.umd.min.js"></script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
@@ -16,7 +19,6 @@
       --green-lily:#66AC8D;
       --gold-honey:#F5D66D;
       --teal-ocean:#368678;
-      --table-shade:#B6DAD1;
     }
 
     body {
@@ -39,7 +41,11 @@
     .enroll-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.45);
+    }
+    .enroll-title {
+      color: var(--gold-honey);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
     }
 
     /* Modal */
@@ -64,64 +70,127 @@
 <!-- Parallax Header -->
 <header class="enroll-hero flex items-center justify-center">
   <div class="enroll-overlay"></div>
-  <h1 class="accent text-white text-4xl relative z-10 drop-shadow-lg">
+  <h1 class="accent enroll-title text-4xl relative z-10">
     Enrollment Information
   </h1>
 </header>
 
 <!-- Content Section -->
 <section class="max-w-5xl mx-auto px-6 py-12">
-  <h2 class="accent text-3xl text-teal-ocean mb-6">Begin Your Journey With Us</h2>
+  <h2 class="accent text-3xl mb-6">Begin Your Journey With Us</h2>
 
   <p class="mb-4">
-    At Epitome Education, we believe in supporting families with high–quality resources,
-    individualized guidance, and community-focused learning experiences. Below you can  
-    access the full admissions application and next steps.
+    At Epitome Education, we believe in supporting families with high–quality
+    resources and individualized guidance. Below you can access our admissions
+    information and required enrollment documents.
   </p>
 
   <ul class="list-disc ml-6 mb-8 space-y-2">
     <li>Review the Admissions Handbook</li>
-    <li>Complete the Application Form</li>
-    <li>Submit required documents</li>
+    <li>Complete Enrollment Application</li>
+    <li>Sign Waiver & Emergency Release</li>
     <li>Schedule your family interview</li>
   </ul>
 
-  <!-- Open Modal Button -->
-  <button onclick="openModal()" class="px-6 py-3 rounded-lg font-semibold shadow btn-gold">
-    View Application Form
-  </button>
-</section>
+  <!-- Admissions Handbook Section -->
+  <h3 class="accent text-2xl mb-4">Admissions Handbook</h3>
 
-<!-- Modal -->
-<div id="pdfModal" class="modal-bg hidden fixed inset-0 items-center justify-center z-50">
-
-  <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-3xl w-full relative">
-    <button onclick="closeModal()" class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">
-      ×
-    </button>
-
-    <h2 class="accent text-2xl mb-4 text-teal-ocean">Enrollment Application</h2>
-
-    <iframe 
-      src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/b6f012a45ca698aa05e8dab86bc225d3324aca57/Admissions%20Application%20-%20Sheet1-4.pdf"
-      class="w-full h-[600px] rounded border border-teal-ocean">
+  <div class="border rounded-xl shadow overflow-hidden">
+    <iframe
+      src="https://drive.google.com/file/d/167tHEhAd7rXXRgKwOJYwGrHepF8rpLjz/preview"
+      class="w-full h-[400px]">
     </iframe>
-
-    <a href="thankyou.html" class="mt-6 inline-block px-5 py-3 btn-gold rounded-lg font-semibold shadow">
-      Submit Application
-    </a>
   </div>
-</div>
+
+  <button onclick="openModal()" class="mt-4 px-6 py-3 rounded-lg btn-gold font-semibold shadow">
+    View / Download Full Handbook
+  </button>
+
+  <!-- Modal for Handbook -->
+  <div id="pdfModal" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
+    <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-3xl w-full relative">
+      <button onclick="closeModal()" class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">×</button>
+
+      <h2 class="accent text-2xl mb-4 text-teal-ocean">Admissions Handbook</h2>
+
+      <iframe
+        src="https://drive.google.com/file/d/167tHEhAd7rXXRgKwOJYwGrHepF8rpLjz/preview"
+        class="w-full h-[600px] rounded border border-teal-ocean">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Signature / Waiver Section -->
+  <h3 class="accent text-2xl mt-12 mb-4">Digital Waiver & Emergency Release</h3>
+
+  <form id="waiverForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-4 bg-white p-6 rounded-xl shadow border">
+      
+      <input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
+      <input type="hidden" name="subject" value="New Signed Waiver Submission">
+      <input type="hidden" name="from_name" value="Epitome Education Website">
+      <input type="hidden" name="redirect" value="thankyou.html">
+
+      <div>
+        <label class="font-semibold">Parent / Guardian Name</label>
+        <input type="text" name="parent_name" required class="w-full border rounded px-3 py-2">
+      </div>
+
+      <div>
+        <label class="font-semibold">Email</label>
+        <input type="email" name="email" required class="w-full border rounded px-3 py-2">
+      </div>
+
+      <div>
+        <label class="font-semibold">Waiver & Emergency Release Document</label>
+        <iframe
+          src="https://drive.google.com/file/d/1vim8fnXGIcAWv8oJ0w8tjuewmybbGsSV/preview"
+          class="w-full h-[300px] border rounded">
+        </iframe>
+      </div>
+
+      <!-- Signature Pad -->
+      <div>
+        <label class="font-semibold">Digital Signature</label>
+        <canvas id="signature" class="border w-full h-40 rounded bg-white"></canvas>
+        <button type="button" onclick="clearSignature()" class="mt-2 text-sm underline text-red-500">
+          Clear Signature
+        </button>
+
+        <!-- Signature Data -->
+        <input type="hidden" name="signature_data" id="signature_data">
+      </div>
+
+      <button
+        onclick="saveSignature()"
+        class="px-6 py-3 btn-gold rounded-lg font-semibold shadow">
+        Submit Waiver
+      </button>
+  </form>
+
+</section>
 
 <!-- Modal Script -->
 <script>
-  function openModal(){
-    document.getElementById("pdfModal").style.display = "flex";
+  function openModal(){ document.getElementById("pdfModal").style.display = "flex"; }
+  function closeModal(){ document.getElementById("pdfModal").style.display = "none"; }
+</script>
+
+<!-- Signature Script -->
+<script>
+  const canvas = document.getElementById("signature");
+  const signaturePad = new SignaturePad(canvas);
+
+  function clearSignature() {
+    signaturePad.clear();
   }
-  function closeModal(){
-    document.getElementById("pdfModal").style.display = "none";
+
+  function saveSignature() {
+    if (!signaturePad.isEmpty()) {
+      document.getElementById("signature_data").value = signaturePad.toDataURL();
+    }
   }
 </script>
 
 </body>
 </html>
+
