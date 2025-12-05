@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meals & Nutrition | Epitome Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --green-lily:#66AC8D;
+      --gold-honey:#F5D66D;
+      --teal-ocean:#368678;
+      --table-shade:#B6DAD1;
+    }
+    body {
+      font-family: 'Quattrocento', serif;
+      color: var(--teal-ocean);
+      background: #fcfcfc;
+    }
+    .accent { font-family: 'Cinzel', serif; }
+    .btn-gold { background:var(--gold-honey); color:var(--teal-ocean); }
+    .btn-gold:hover { filter:brightness(.95); }
+    .modal-bg {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+    }
+    .modal-box {
+      background: white;
+      max-width: 90%;
+      width: 800px;
+      margin: auto;
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header/navigation (you can copy from your main site) -->
+
+  <!-- Meals & Nutrition Content -->
+  <main class="max-w-4xl mx-auto px-4 py-12">
+
+    <h1 class="accent text-4xl mb-6">Meals & Nutrition</h1>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold accent mb-3">Our Meal Program</h2>
+      <p>
+        <!-- Paste your text explaining the meal plan here -->
+        We provide wholesome breakfasts and lunches using fresh, organic ingredients whenever possible.  
+        Our meals are designed to support healthy growth, strong minds, and active bodies.  
+        Snacks and hydration breaks are provided throughout the day.  
+        Families may view the monthly menu below or download the full PDF for reference.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold accent mb-3">Monthly Menu Preview</h2>
+      <img src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/afa8a9829aee7d6cb38b4f53a5c0df6a1938f2b2/IMG_20251130_002524.jpg"
+           alt="Monthly meals menu"
+           class="rounded-lg shadow w-full mb-4">
+      <button onclick="openMealsModal()" class="btn-gold px-6 py-3 rounded-lg font-semibold">
+        View Full Menu (PDF)
+      </button>
+    </section>
+
+  </main>
+
+  <!-- Modal for PDF -->
+  <div id="mealsModal" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
+    <div class="modal-box">
+      <button onclick="closeMealsModal()"
+              class="absolute top-4 right-4 text-teal-ocean text-2xl font-bold">×</button>
+      <iframe
+        src="https://drive.google.com/file/d/1IsaYjafsALdC-mxIz-LYHweeBicOW_0Z/preview"
+        class="w-full h-[600px] rounded-lg shadow"
+        style="border:none;">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    function openMealsModal() {
+      document.getElementById("mealsModal").style.display = "flex";
+    }
+    function closeMealsModal() {
+      document.getElementById("mealsModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
