@@ -163,10 +163,22 @@
         </p>
 
         <div class="text-center">
-          <button onclick="openModal('membershipModal')"
-            class="px-8 py-4 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition">
-            View Membership Details
-          </button>
+          <div class="flex flex-col sm:flex-row gap-4 mt-4">
+
+  <!-- Open Membership Modal -->
+  <button onclick="openModal('membershipModal')"
+    class="flex-1 px-6 py-3 rounded-lg shadow font-semibold bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition">
+    View Membership (Pop-Up)
+  </button>
+
+  <!-- Go to Membership Page -->
+  <a href="membership.html"
+    class="flex-1 px-6 py-3 rounded-lg shadow font-semibold border border-[var(--teal-ocean)] text-[var(--teal-ocean)] hover:bg-teal-50 transition text-center">
+    Go to Membership Page
+  </a>
+
+</div>
+
         </div>
       </div>
 
