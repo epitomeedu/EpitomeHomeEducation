@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programs • Epitome Education</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts -->
@@ -27,17 +27,14 @@
 
     .accent { font-family: 'Cinzel', serif; }
 
-    /* HERO */
+    /* Parallax Header */
     .programs-hero {
-      background-image: url('https://images.unsplash.com/photo-1519452575417-564c1401ecc0');
+      background-image: url('https://images.unsplash.com/photo-1601758123927-53f1365a0f21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI0OTN8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMGNoaWxkcmVufGVufDB8fHx8MTY5NzY3MTk2Mw&ixlib=rb-4.0.3&q=80&w=1080');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
+      height: 330px;
       position: relative;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
     .hero-overlay {
       position: absolute;
@@ -64,146 +61,80 @@
 
 <body>
 
-<!-- HEADER HERO -->
-<header class="programs-hero">
+<!-- HEADER -->
+<header class="programs-hero flex items-center justify-center">
   <div class="hero-overlay"></div>
-  <h1 class="accent text-5xl text-yellow-300 drop-shadow-xl relative z-10">
+  <h1 class="accent text-gold-honey text-4xl relative z-10 drop-shadow-xl">
     Our Programs
   </h1>
 </header>
 
-
-
-
 <!-- MAIN CONTENT -->
-<section class="max-w-7xl mx-auto px-6 py-20">
+<section class="max-w-6xl mx-auto px-6 py-16">
 
-  <h2 class="accent text-4xl mb-12 text-teal-ocean text-center">
-    Designed With Purpose & Care
-  </h2>
+  <!-- Section Title -->
+  <h2 class="accent text-3xl mb-10 text-teal-ocean">Designed With Purpose & Care</h2>
 
   <!-- PROGRAM CARDS -->
   <div class="grid md:grid-cols-2 gap-12">
 
-    <!-- PROGRAM 1 -->
-    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-gold-honey overflow-hidden">
-      <img 
-        src="https://images.unsplash.com/photo-1532798369041-b3d1a3adf3c8"
-        class="w-full h-64 object-cover"
-        alt="Young children learning through hands-on play">
+    <!-- PROGRAM 1: Ages 3–6 -->
+    <div class="bg-white rounded-2xl shadow-xl border border-teal-ocean/30 overflow-hidden">
+      <!-- PHOTO -->
+      <img src="https://images.unsplash.com/photo-1601758123927-53f1365a0f21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI0OTN8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMGNoaWxkcmVufGVufDB8fHx8MTY5NzY3MTk2Mw&ixlib=rb-4.0.3&q=80&w=1080"
+           class="w-full h-56 object-cover">
 
-      <div class="p-8">
-        <h3 class="accent text-3xl mb-4 text-teal-ocean">Early Learners (Ages 3–6)</h3>
-
-        <p class="mb-6 leading-relaxed">
-          A nurturing, hands-on education program centered around sensory play, literacy foundations,
-          fine motor development, nature studies, and early math — all in a warm,
-          supportive small-group environment.
-        </p>
-
-        <button onclick="openModal('modal36')"
-          class="btn-gold px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition">
-          View Program Details
-        </button>
-      </div>
-    </div>
-
-    <!-- PROGRAM 2 -->
-    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-gold-honey overflow-hidden">
-      <img 
-        src="https://images.unsplash.com/photo-1594708767771-a7502209ff81"
-        class="w-full h-64 object-cover"
-        alt="Elementary students collaborating on learning projects">
-
-      <div class="p-8">
-        <h3 class="accent text-3xl mb-4 text-teal-ocean">Elementary Scholars (Ages 7–10)</h3>
-
-        <p class="mb-6 leading-relaxed">
-          A calm, structured academic program emphasizing strong reading, expressive writing,
-          hands-on science, real-world math, independent research, and character development.
-        </p>
-
-        <button onclick="openModal('modal710')"
-          class="btn-gold px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition">
-          View Program Details
-        </button>
-      </div>
-    </div>
-
-  </div>
-
-
-
-
-
-  <!-- MEMBERSHIP PREVIEW -->
-  <section class="max-w-5xl mx-auto px-6 pb-10 mt-20">
-
-    <h2 class="accent text-4xl mb-8 text-center text-teal-ocean">
-      Membership at Epitome Education
-    </h2>
-
-    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-gold-honey overflow-hidden">
-
-      <div class="h-64 bg-cover bg-center"
-        style="background-image:url('https://images.unsplash.com/photo-1503457574462-bd27054394c1');">
-      </div>
-
-      <div class="p-10 leading-relaxed">
-
+      <div class="p-6">
+        <h3 class="accent text-2xl mb-3 text-teal-ocean">Early Learners (Ages 3–6)</h3>
         <p class="mb-4">
-          Membership transforms our center into <strong>your</strong> space — a warm community where children
-          explore freely and parents feel supported. Families enjoy workshops, events, library access,
-          curriculum support, nature spaces, teen media center hours, and more.
+          Nurturing, hands-on early education focusing on sensory learning, literacy foundations, fine motor skills, early math, and nature studies.
         </p>
-
-        <p class="mb-6">
-          Epitome becomes a second home — a safe, intentional environment where learning, creativity,
-          connection, and family growth flourish.
-        </p>
-
-        <div class="text-center">
-          <div class="flex flex-col sm:flex-row gap-4 mt-4">
-
-  <!-- Open Membership Modal -->
-  <button onclick="openModal('membershipModal')"
-    class="flex-1 px-6 py-3 rounded-lg shadow font-semibold bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition">
-    View Membership (Pop-Up)
-  </button>
-
-  <!-- Go to Membership Page -->
-  <a href="membership.html"
-    class="flex-1 px-6 py-3 rounded-lg shadow font-semibold border border-[var(--teal-ocean)] text-[var(--teal-ocean)] hover:bg-teal-50 transition text-center">
-    Go to Membership Page
-  </a>
-
-</div>
-
-        </div>
+        <button onclick="openModal('modal36')"
+          class="px-8 py-4 rounded-lg shadow font-semibold bg-[var(--green-lily)] text-white hover:bg-teal-700 transition">
+          View Program Details
+        </button>
       </div>
-
     </div>
 
-  </section>
+    <!-- PROGRAM 2: Ages 7–10 -->
+    <div class="bg-white rounded-2xl shadow-xl border border-teal-ocean/30 overflow-hidden">
+      <!-- PHOTO -->
+      <img src="https://images.unsplash.com/photo-1598327109661-6b61b720d6b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI0OTN8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGNsYXNzcm9vbHxlbnwwfHx8fDE2OTc2NzIxMDY&ixlib=rb-4.0.3&q=80&w=1080"
+           class="w-full h-56 object-cover">
+
+      <div class="p-6">
+        <h3 class="accent text-2xl mb-3 text-teal-ocean">Elementary Scholars (Ages 7–10)</h3>
+        <p class="mb-4">
+          Structured academic program emphasizing reading, writing, hands-on science, math skills, character development, and independent project learning.
+        </p>
+        <button onclick="openModal('modal710')"
+          class="px-8 py-4 rounded-lg shadow font-semibold bg-[var(--green-lily)] text-white hover:bg-teal-700 transition">
+          View Program Details
+        </button>
+      </div>
+    </div>
+
+  </div><!-- end grid -->
+
+  <!-- Go to Membership Button -->
+  <div class="text-center mt-12">
+    <button onclick="openModal('membershipModal')"
+      class="px-8 py-4 rounded-lg shadow font-semibold bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition">
+      Go to Memberships
+    </button>
+  </div>
 
 </section>
 
-
-
-
-<!-- ⭐ MODALS BELOW (unchanged except for styling) -->
+<!-- MODALS -->
 
 <!-- Ages 3–6 Modal -->
 <div id="modal36" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
   <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
-    <button onclick="closeModal('modal36')" 
-      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">
-      ×
-    </button>
-
+    <button onclick="closeModal('modal36')"
+      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">×</button>
     <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Ages 3–6</h2>
-
-    <iframe 
+    <iframe
       src="https://drive.google.com/file/d/1XcVMddcFXbipS8uLifdvvIfaM7WGPOHn/preview"
       class="w-full h-[600px] rounded border border-teal-ocean"></iframe>
   </div>
@@ -212,45 +143,30 @@
 <!-- Ages 7–10 Modal -->
 <div id="modal710" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
   <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
-    <button onclick="closeModal('modal710')" 
-      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">
-      ×
-    </button>
-
+    <button onclick="closeModal('modal710')"
+      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">×</button>
     <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Ages 7–10</h2>
-
-    <iframe 
+    <iframe
       src="https://drive.google.com/file/d/1dpfLIy58qCjrmV5MEYu2MQFoD1zRoT0K/preview"
       class="w-full h-[600px] rounded border border-teal-ocean"></iframe>
   </div>
 </div>
 
-<!-- MEMBERSHIP MODAL -->
+<!-- Membership Modal -->
 <div id="membershipModal" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
-  <div class="modal-box bg-white p-8 rounded-xl max-w-2xl w-full relative">
-
-    <button onclick="closeModal('membershipModal')" 
-      class="absolute top-4 right-4 text-2xl font-bold text-teal-ocean">
-      ×
-    </button>
-
+  <div class="modal-box bg-white rounded-xl p-8 shadow-xl max-w-2xl w-full relative">
+    <button onclick="closeModal('membershipModal')" class="absolute top-4 right-4 text-2xl font-bold text-teal-ocean">×</button>
     <h2 class="accent text-3xl text-center mb-6 text-teal-ocean">Membership Inquiry</h2>
-
     <p class="text-center mb-4">
-      Please email us at <strong>waiver@epitomeeducation.org</strong>  
-      to begin your membership registration or request a tour.
+      Please email us at <strong>waiver@epitomeeducation.org</strong> to begin your membership registration or request a tour.
     </p>
-
     <p class="text-center text-sm text-gray-600">
       A full membership packet will be available soon.
     </p>
   </div>
 </div>
 
-
-
-
-<!-- Modal Script -->
+<!-- SCRIPTS -->
 <script>
   function openModal(id) {
     document.getElementById(id).style.display = "flex";
@@ -262,4 +178,5 @@
 
 </body>
 </html>
+
 
