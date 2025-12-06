@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs • Epitome Education</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-lily:#66AC8D;
+      --gold-honey:#F5D66D;
+      --teal-ocean:#368678;
+      --table-shade:#B6DAD1;
+    }
+
+    body {
+      font-family: 'Quattrocento', serif;
+      color: var(--teal-ocean);
+      background: #fdfdfd;
+    }
+
+    .accent { font-family: 'Cinzel', serif; }
+
+    /* Parallax Header */
+    .programs-hero {
+      background-image: url('https://images.unsplash.com/photo-1529070538774-1843cb3265df');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 330px;
+      position: relative;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    /* Modal */
+    .modal-bg {
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      display: none;
+    }
+    .modal-box {
+      animation: fadeIn .3s ease-out;
+      border: 3px solid var(--gold-honey);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="programs-hero flex items-center justify-center">
+  <div class="hero-overlay"></div>
+  <h1 class="accent text-gold-honey text-4xl relative z-10 drop-shadow-xl text-yellow-300">
+    Our Programs
+  </h1>
+</header>
+
+<!-- MAIN CONTENT -->
+<section class="max-w-6xl mx-auto px-6 py-16">
+
+  <!-- Section Title -->
+  <h2 class="accent text-3xl mb-10 text-teal-ocean">Designed With Purpose & Care</h2>
+
+  <!-- PROGRAM CARDS -->
+  <div class="grid md:grid-cols-2 gap-12">
+
+    <!-- ---------- PROGRAM 1: Ages 3–6 ---------- -->
+    <div class="bg-white rounded-2xl shadow-xl border border-teal-ocean/30 overflow-hidden">
+      <!-- PHOTO (replace later with real) -->
+      <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238"
+           class="w-full h-56 object-cover">
+
+      <div class="p-6">
+        <h3 class="accent text-2xl mb-3 text-teal-ocean">Early Learners (Ages 3–6)</h3>
+
+        <p class="mb-4">
+          A nurturing, hands-on early education program focused on sensory learning,
+          literacy foundations, fine motor development, early math, and nature studies —
+          all delivered in an intimate small-group environment.
+        </p>
+
+        <button onclick="openModal('modal36')" 
+          class="px-5 py-3 rounded-lg shadow font-semibold bg-[var(--green-lily)] text-white hover:bg-teal-700 transition">
+          View Program Details
+        </button>
+      </div>
+    </div>
+
+    <!-- ---------- PROGRAM 2: Ages 7–10 ---------- -->
+    <div class="bg-white rounded-2xl shadow-xl border border-teal-ocean/30 overflow-hidden">
+      <!-- PHOTO (replace later with real) -->
+      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655"
+           class="w-full h-56 object-cover">
+
+      <div class="p-6">
+        <h3 class="accent text-2xl mb-3 text-teal-ocean">Elementary Scholars (Ages 7–10)</h3>
+
+        <p class="mb-4">
+          A structured academic program emphasizing reading fluency, writing,
+          hands-on science, real-world math skills, character development, and
+          independent project learning — all in a calm, supportive setting.
+        </p>
+
+        <button onclick="openModal('modal710')" 
+          class="px-5 py-3 rounded-lg shadow font-semibold bg-[var(--green-lily)] text-white hover:bg-teal-700 transition">
+          View Program Details
+        </button>
+      </div>
+    </div>
+
+  </div><!-- end grid -->
+</section>
+
+
+
+<!-- ⭐ MODALS BELOW -->
+
+<!-- Ages 3–6 Modal -->
+<div id="modal36" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
+  <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
+    <button onclick="closeModal('modal36')" 
+      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">
+      ×
+    </button>
+
+    <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Ages 3–6</h2>
+
+    <iframe 
+      src="https://drive.google.com/file/d/1XcVMddcFXbipS8uLifdvvIfaM7WGPOHn/preview"
+      class="w-full h-[600px] rounded border border-teal-ocean"></iframe>
+  </div>
+</div>
+
+<!-- Ages 7–10 Modal -->
+<div id="modal710" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
+  <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
+    <button onclick="closeModal('modal710')" 
+      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">
+      ×
+    </button>
+
+    <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Ages 7–10</h2>
+
+    <iframe 
+      src="https://drive.google.com/file/d/1dpfLIy58qCjrmV5MEYu2MQFoD1zRoT0K/preview"
+      class="w-full h-[600px] rounded border border-teal-ocean"></iframe>
+  </div>
+</div>
+
+
+
+<!-- MODAL SCRIPT -->
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+</script>
+
+</body>
+</html>
