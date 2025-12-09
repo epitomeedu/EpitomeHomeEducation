@@ -64,7 +64,7 @@
 
 <body>
 
-<!-- HEADER (same as index) -->
+<!-- HEADER -->
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
     <img class="logo-img h-20"
@@ -72,7 +72,7 @@
 
     <nav class="hidden md:flex items-center space-x-6 text-sm accent">
       <a href="index.html">Home</a>
-      <a href="programs.html" class="text-[var(--gold-honey)]" >Programs</a>
+      <a href="programs.html" class="text-[var(--gold-honey)]">Programs</a>
       <a href="membership.html">Membership</a>
       <a href="meals.html">Meals & Nutrition</a>
       <a href="enrollment.html">Enrollment</a>
@@ -84,14 +84,6 @@
     <button id="mobileBtn" class="md:hidden text-xl" style="color:var(--teal-ocean)">☰</button>
   </div>
 
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden">
-      <button id="mobileBtn" aria-label="open menu" class="text-xl" style="color:var(--teal-ocean)">☰</button>
-    </div>
-
-  </div>
-
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
     <div class="p-4 flex flex-col space-y-2 mobile-nav">
       <a href="index.html#home">Home</a>
@@ -104,61 +96,25 @@
       <a href="index.html#schedules">Classroom Schedules</a>
       <a href="index.html#events">Events</a>
       <a href="index.html#contact">Contact</a>
-      <a href="https://square.link/u/L8TsrbYo" target="_blank" class="mt-2 px-3 py-2 rounded-lg btn-gold text-center font-semibold">Make a Payment</a>
-    </div>
-  </div>
-</header>
-
-<script>
-  document.getElementById("mobileBtn").onclick = function () {
-    document.getElementById("mobileMenu").classList.toggle("hidden");
-  };
-</script>
-
-
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden">
-      <button id="mobileBtn" aria-label="open menu" class="text-3xl" style="color:var(--teal-ocean)">☰</button>
-    </div>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
-    <div class="p-4 flex flex-col space-y-3 mobile-nav">
-      <a href="index.html#home">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="programs.html">Programs</a>
-      <a href="membership.html">Membership</a>
-      <a href="index.html#tuition">Tuition & Fees</a>
-      <a href="index.html#handbook">Parent Handbook</a>
-      <a href="index.html#events">Events</a>
-      <a href="index.html#contact">Contact</a>
       <a href="https://square.link/u/L8TsrbYo" target="_blank"
-         class="mt-2 px-3 py-2 rounded-lg btn-gold text-center font-semibold">
-        Make a Payment
-      </a>
+        class="mt-2 px-3 py-2 rounded-lg btn-gold text-center font-semibold">Make a Payment</a>
     </div>
   </div>
 </header>
 
-<!-- Mobile Menu Script -->
 <script>
-document.getElementById("mobileBtn").addEventListener("click", function () {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("hidden");
-});
+document.getElementById("mobileBtn").onclick = function () {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+};
 </script>
 
-<!-- HEADER HERO -->
+<!-- HERO -->
 <header class="programs-hero">
   <div class="hero-overlay"></div>
   <h1 class="accent text-5xl text-yellow-300 drop-shadow-xl relative z-10">
     Our Programs
   </h1>
 </header>
-
-
-
 
 <!-- MAIN CONTENT -->
 <section class="max-w-7xl mx-auto px-6 py-20">
@@ -167,23 +123,22 @@ document.getElementById("mobileBtn").addEventListener("click", function () {
     Designed With Purpose & Care
   </h2>
 
-  <!-- PROGRAM CARDS -->
-  <div class="grid md:grid-cols-2 gap-12">
+  <!-- PROGRAM GRID (3 CARDS PER ROW) -->
+  <div class="grid md:grid-cols-3 gap-12">
 
-    <!-- PROGRAM 1 -->
+    <!-- PROGRAM 1: PRIMARY CLASSROOM -->
     <div class="bg-white rounded-2xl shadow-xl border-t-4 border-gold-honey overflow-hidden">
       <img 
-  src="https://images.unsplash.com/photo-1588072432836-e10032774350"
-  class="w-full h-64 object-cover"
-  alt="Young children learning through hands-on play">
+        src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/175f12e75aeb6badd3d1d61918525157215ef156/2075.jpg"
+        class="w-full h-64 object-cover"
+        alt="Primary Classroom">
 
       <div class="p-8">
-        <h3 class="accent text-3xl mb-4 text-teal-ocean">Early Learners (Ages 3–6)</h3>
+        <h3 class="accent text-3xl mb-4 text-teal-ocean">Primary Classroom (Ages 3–6)</h3>
 
         <p class="mb-6 leading-relaxed">
-          A nurturing, hands-on education program centered around sensory play, literacy foundations,
-          fine motor development, nature studies, and early math — all in a warm,
-          supportive small-group environment.
+          A nurturing, hands-on education program centered around sensory play,
+          literacy foundations, nature studies, and early academics.
         </p>
 
         <button onclick="openModal('modal36')"
@@ -193,20 +148,19 @@ document.getElementById("mobileBtn").addEventListener("click", function () {
       </div>
     </div>
 
-    <!-- PROGRAM 2 -->
+    <!-- PROGRAM 2: LOWER ELEMENTARY -->
     <div class="bg-white rounded-2xl shadow-xl border-t-4 border-gold-honey overflow-hidden">
       <img 
-  https://images.unsplash.com/photo-1509062522246-3755977927d7
-  class="w-full h-64 object-cover"
-  alt="Elementary students collaborating on learning projects">
-
+        src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/175f12e75aeb6badd3d1d61918525157215ef156/2062.jpg"
+        class="w-full h-64 object-cover"
+        alt="Lower Elementary Classroom">
 
       <div class="p-8">
-        <h3 class="accent text-3xl mb-4 text-teal-ocean">Elementary Scholars (Ages 7–10)</h3>
+        <h3 class="accent text-3xl mb-4 text-teal-ocean">Lower Elementary Classroom (Ages 7–10)</h3>
 
         <p class="mb-6 leading-relaxed">
-          A calm, structured academic program emphasizing strong reading, expressive writing,
-          hands-on science, real-world math, independent research, and character development.
+          A calm academic environment focusing on expressive writing, advanced reading,
+          hands-on science, and foundational research.
         </p>
 
         <button onclick="openModal('modal710')"
@@ -216,132 +170,59 @@ document.getElementById("mobileBtn").addEventListener("click", function () {
       </div>
     </div>
 
-  </div>
-
-
-
-
-
-  <!-- MEMBERSHIP PREVIEW -->
-  <section class="max-w-5xl mx-auto px-6 pb-10 mt-20">
-
-    <h2 class="accent text-4xl mb-8 text-center text-teal-ocean">
-      Membership at Epitome Education
-    </h2>
-
+    <!-- PROGRAM 3: UPPER ELEMENTARY -->
     <div class="bg-white rounded-2xl shadow-xl border-t-4 border-gold-honey overflow-hidden">
+      <img 
+        src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+        class="w-full h-64 object-cover"
+        alt="Upper Elementary Classroom">
 
-      <div class="h-64 bg-cover bg-center"
-        style="background-image:url('https://images.unsplash.com/photo-1503457574462-bd27054394c1');">
-      </div>
+      <div class="p-8">
+        <h3 class="accent text-3xl mb-4 text-teal-ocean">Upper Elementary Classroom (Ages 11–13)</h3>
 
-      <div class="p-10 leading-relaxed">
-
-        <p class="mb-4">
-          Membership transforms our center into <strong>your</strong> space — a warm community where children
-          explore freely and parents feel supported. Families enjoy workshops, events, library access,
-          curriculum support, nature spaces, teen media center hours, and more.
+        <p class="mb-6 leading-relaxed">
+          A unique upper-elementary learning experience is coming soon.
         </p>
 
-        <p class="mb-6">
-          Epitome becomes a second home — a safe, intentional environment where learning, creativity,
-          connection, and family growth flourish.
-        </p>
-
-        <div class="text-center">
-          <div class="flex flex-col sm:flex-row gap-4 mt-4">
-
-  <!-- Open Membership Modal -->
-  <button onclick="openModal('membershipModal')"
-    class="flex-1 px-6 py-3 rounded-lg shadow font-semibold bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition">
-    View Membership (Pop-Up)
-  </button>
-
-  <!-- Go to Membership Page -->
-  <a href="membership.html"
-    class="flex-1 px-6 py-3 rounded-lg shadow font-semibold border border-[var(--teal-ocean)] text-[var(--teal-ocean)] hover:bg-teal-50 transition text-center">
-    Go to Membership Page
-  </a>
-
-</div>
-
-        </div>
+        <a href="#" 
+          onclick="alert('Upper Elementary Program details coming soon!');"
+          class="block px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition text-center">
+          Stay Tuned
+        </a>
       </div>
-
     </div>
 
-  </section>
-
+  </div>
 </section>
 
+<!-- MODALS (unchanged except names) -->
 
-
-
-<!-- ⭐ MODALS BELOW (unchanged except for styling) -->
-
-<!-- Ages 3–6 Modal -->
 <div id="modal36" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
   <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
-    <button onclick="closeModal('modal36')" 
-      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">
-      ×
-    </button>
+    <button onclick="closeModal('modal36')"
+      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">×</button>
 
-    <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Ages 3–6</h2>
+    <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Primary Classroom (Ages 3–6)</h2>
 
-    <iframe 
+    <iframe
       src="https://drive.google.com/file/d/1XcVMddcFXbipS8uLifdvvIfaM7WGPOHn/preview"
       class="w-full h-[600px] rounded border border-teal-ocean"></iframe>
   </div>
 </div>
 
-<!-- Ages 7–10 Modal -->
 <div id="modal710" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
   <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
-    <button onclick="closeModal('modal710')" 
-      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">
-      ×
-    </button>
+    <button onclick="closeModal('modal710')"
+      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">×</button>
 
-    <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Ages 7–10</h2>
+    <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Lower Elementary Classroom (Ages 7–10)</h2>
 
-    <iframe 
+    <iframe
       src="https://drive.google.com/file/d/1dpfLIy58qCjrmV5MEYu2MQFoD1zRoT0K/preview"
       class="w-full h-[600px] rounded border border-teal-ocean"></iframe>
   </div>
 </div>
 
-<!-- MEMBERSHIP MODAL -->
-<div id="membershipModal" 
-     class="modal-bg fixed inset-0 items-center justify-center z-50" 
-     style="display:none;">
-  
-  <div class="modal-box bg-white p-8 rounded-xl max-w-2xl w-full relative">
-
-    <button onclick="closeModal('membershipModal')" 
-      class="absolute top-4 right-4 text-2xl font-bold text-teal-ocean">
-      ×
-    </button>
-
-    <h2 class="accent text-3xl text-center mb-6 text-teal-ocean">Membership Inquiry</h2>
-
-    <p class="text-center mb-4">
-      Please email us at <strong>membership@epitomeeducation.org</strong>  
-      to begin your membership registration or request a tour.
-    </p>
-
-    <p class="text-center text-sm text-gray-600">
-      A full membership packet will be available soon.
-    </p>
-
-  </div>
-</div>
-
-
-
-
-
-<!-- Modal Script -->
 <script>
   function openModal(id) {
     document.getElementById(id).style.display = "flex";
@@ -353,5 +234,6 @@ document.getElementById("mobileBtn").addEventListener("click", function () {
 
 </body>
 </html>
+
 
 
