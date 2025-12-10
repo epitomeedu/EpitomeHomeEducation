@@ -30,7 +30,6 @@
 
     /* Hero */
     .meals-hero {
-      /* RAW hero image from your GitHub (converted from blob) */
       background-image: url('https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/9ec5e60815e247a9062ab3077be6f32226c6e49c/2118.jpg');
       background-size: cover;
       background-position: center;
@@ -46,15 +45,13 @@
     /* Cards */
     .card-img { height:220px; object-fit:cover; width:100%; border-radius:12px; }
 
-    /* Modal base */
+    /* Modal system */
     .modal-bg { display:none; background: rgba(0,0,0,0.6); position:fixed; inset:0; z-index:60; align-items:center; justify-content:center; padding:24px; }
     .modal-box { background:#fff; border-radius:12px; max-width:1100px; width:100%; max-height:90vh; overflow:auto; padding:20px; box-shadow:0 12px 30px rgba(0,0,0,.2); }
     .modal-close { position:absolute; top:14px; right:16px; font-size:22px; color:var(--teal-ocean); cursor:pointer; background:transparent; border:none; }
 
-    /* Make the active nav link gold */
     .nav-active { color: var(--gold-honey) !important; font-weight:600; }
 
-    /* small responsive tweaks */
     @media (min-width:768px){
       .card-img { height:260px; }
     }
@@ -65,13 +62,11 @@
 <!-- HEADER -->
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-    <!-- logo (same as other pages) -->
     <a href="index.html" class="flex items-center gap-3">
       <img class="logo-img h-14" src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg" alt="Epitome Education Logo">
       <span class="accent hidden md:inline text-lg text-teal-ocean">Epitome Education</span>
     </a>
 
-    <!-- desktop nav -->
     <nav class="hidden md:flex items-center space-x-6 text-sm accent">
       <a href="index.html">Home</a>
       <a href="programs.html">Programs</a>
@@ -82,13 +77,11 @@
       <a href="https://square.link/u/L8TsrbYo" target="_blank" class="ml-2 px-3 py-2 rounded-lg btn-gold font-semibold text-sm">Make a Payment</a>
     </nav>
 
-    <!-- mobile menu button -->
     <div class="md:hidden">
       <button id="mobileBtn" aria-label="open menu" class="text-2xl" style="color:var(--teal-ocean)">☰</button>
     </div>
   </div>
 
-  <!-- mobile menu -->
   <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
     <div class="p-4 flex flex-col space-y-2 mobile-nav">
       <a href="index.html">Home</a>
@@ -103,7 +96,6 @@
 </header>
 
 <script>
-  // mobile menu toggle + auto-close on link click
   const mobileBtn = document.getElementById('mobileBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   mobileBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
@@ -111,10 +103,8 @@
     a.addEventListener('click', ()=> mobileMenu.classList.add('hidden'));
   });
 
-  // nav active style: make Meals link gold when on this page
   (function setActiveNav(){
     const path = location.pathname.split('/').pop();
-    if(path === '' || path === 'index.html') return;
     if(path === 'meals.html') {
       document.getElementById('mealsNav').classList.add('nav-active');
       const m = document.getElementById('mealsNavMobile');
@@ -132,67 +122,53 @@
   </div>
 </section>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 <main class="max-w-6xl mx-auto px-6 py-12">
 
   <p class="text-center mb-8 max-w-3xl mx-auto">
     At Epitome Education we provide thoughtfully prepared meals, clear menu options, and flexible plans to support busy families.
   </p>
 
-  <!-- CARDS GRID -->
   <div class="grid md:grid-cols-2 gap-8">
 
-    <!-- CARD 1: Our Meal Program -->
+    <!-- 1. OUR MEAL PROGRAM -->
     <article class="bg-white rounded-2xl p-6 shadow border border-[var(--table-shade)]">
       <img class="card-img mb-4 rounded" alt="Our Meal Program"
         src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/d7bda14617906bb3c5f42c87ee0a4cf7a3f958f6/20211006_022942-01.jpeg" />
       <h3 class="accent text-2xl text-teal-ocean mb-2">Our Meal Program</h3>
       <p class="mb-4">Philosophy, sample menus, and healthy-meal practices for children at Epitome.</p>
 
-      <div class="flex gap-3">
-        <button onclick="openModal('modalMealProgram')" class="px-4 py-2 rounded-lg btn-gold font-semibold">View</button>
-        <a href="https://drive.google.com/file/d/1mHealZCMjLBGg2fwhely1aXUFZPa1peD/view?usp=drivesdk" target="_blank" class="px-4 py-2 rounded-lg border font-semibold" style="border-color:var(--teal-ocean); color:var(--teal-ocean)">Open PDF</a>
-      </div>
+      <button onclick="openModal('modalMealProgram')" class="px-4 py-2 rounded-lg btn-gold font-semibold">View</button>
     </article>
 
-    <!-- CARD 2: Monthly Main Options -->
+    <!-- 2. MONTHLY MAIN OPTIONS -->
     <article class="bg-white rounded-2xl p-6 shadow border border-[var(--table-shade)]">
       <img class="card-img mb-4 rounded" alt="Monthly Main Options"
         src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/a3178afc7c686406716bda50d02e8a99aae5c865/2124.jpg" />
       <h3 class="accent text-2xl text-teal-ocean mb-2">Monthly Main Options</h3>
-      <p class="mb-4">Rotate-friendly main-course options our cooks prepare for the month.</p>
+      <p class="mb-4">Rotate-friendly main-course options prepared fresh each month.</p>
 
-      <div class="flex gap-3">
-        <button onclick="openModal('modalMainOptions')" class="px-4 py-2 rounded-lg btn-gold font-semibold">View</button>
-        <a href="https://drive.google.com/file/d/1lqbuqRqrlVUD-Hp3h_pfA7CUvTJc3hc6/view?usp=drivesdk" target="_blank" class="px-4 py-2 rounded-lg border font-semibold" style="border-color:var(--teal-ocean); color:var(--teal-ocean)">Open PDF</a>
-      </div>
+      <button onclick="openModal('modalMainOptions')" class="px-4 py-2 rounded-lg btn-gold font-semibold">View</button>
     </article>
 
-    <!-- CARD 3: Monthly Snack Options -->
+    <!-- 3. MONTHLY SNACK OPTIONS -->
     <article class="bg-white rounded-2xl p-6 shadow border border-[var(--table-shade)]">
       <img class="card-img mb-4 rounded" alt="Monthly Snack Options"
         src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/b0ff2656105f9e1c35bd0b0357a24239fa4eff47/2126.jpg" />
       <h3 class="accent text-2xl text-teal-ocean mb-2">Monthly Snack Options</h3>
-      <p class="mb-4">Healthy snack rotations planned to pair with our main menus.</p>
+      <p class="mb-4">Healthy snack rotations planned to pair with our monthly menus.</p>
 
-      <div class="flex gap-3">
-        <button onclick="openModal('modalSnackOptions')" class="px-4 py-2 rounded-lg btn-gold font-semibold">View</button>
-        <!-- Google Sheet as source for snack options (opens new tab) -->
-        <a href="https://docs.google.com/spreadsheets/d/1WL1eehIB_3a1FQgV2ZjELSmFkr-7PcfWSRfvURZOWhI/edit?usp=drivesdk" target="_blank" class="px-4 py-2 rounded-lg border font-semibold" style="border-color:var(--teal-ocean); color:var(--teal-ocean)">Open Spreadsheet</a>
-      </div>
+      <button onclick="openModal('modalSnackOptions')" class="px-4 py-2 rounded-lg btn-gold font-semibold">View</button>
     </article>
 
-    <!-- CARD 4: Plan Options & Costs -->
+    <!-- 4. PLAN OPTIONS & COSTS -->
     <article class="bg-white rounded-2xl p-6 shadow border border-[var(--table-shade)]">
       <img class="card-img mb-4 rounded" alt="Plan Options & Costs"
         src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/5cab46f4cae60ec1194c418ea14e4a4b41a21167/IMG_20251210_130138.jpg" />
       <h3 class="accent text-2xl text-teal-ocean mb-2">Plan Options & Costs</h3>
-      <p class="mb-4">Flexible plans to match your schedule — daily, weekly, or monthly meal plans.</p>
+      <p class="mb-4">Flexible daily, weekly, and monthly meal plans.</p>
 
-      <div class="flex gap-3">
-        <button onclick="openModal('modalPlans')" class="px-4 py-2 rounded-lg btn-gold font-semibold">View</button>
-        <a href="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/b883bdfad623f42eec2703d1525ee2ecdd980aed/IMG_20251130_002522.jpg" target="_blank" class="px-4 py-2 rounded-lg border font-semibold" style="border-color:var(--teal-ocean); color:var(--teal-ocean)">Open Pricing</a>
-      </div>
+      <button onclick="openModal('modalPlans')" class="px-4 py-2 rounded-lg btn-gold font-semibold">View</button>
     </article>
 
   </div>
@@ -201,69 +177,56 @@
 
 <!-- MODALS -->
 
-<!-- Modal: Our Meal Program -->
+<!-- Modal 1 — Our Meal Program -->
 <div id="modalMealProgram" class="modal-bg">
   <div class="modal-box relative">
     <button class="modal-close" onclick="closeModal('modalMealProgram')">✕</button>
-    <h2 class="accent text-2xl text-teal-ocean mb-4">Our Meal Program — PDF</h2>
+    <h2 class="accent text-2xl text-teal-ocean mb-4">Our Meal Program</h2>
 
-    <!-- Embedded Drive PDF (you supplied a Drive link earlier) -->
-    <iframe src="https://drive.google.com/file/d/1mHealZCMjLBGg2fwhely1aXUFZPa1peD/preview"
+    <iframe src="https://drive.google.com/file/d/1IsaYjafsALdC-mxIz-LYHweeBicOW_0Z/preview"
       style="width:100%; height:75vh; border:0; border-radius:8px;"></iframe>
-
-    <p class="mt-3 text-sm text-gray-600">If the preview doesn't load on some phones, tap "Open PDF" on the card to download / view directly.</p>
   </div>
 </div>
 
-<!-- Modal: Monthly Main Options -->
+<!-- Modal 2 — Main Options -->
 <div id="modalMainOptions" class="modal-bg">
   <div class="modal-box relative">
     <button class="modal-close" onclick="closeModal('modalMainOptions')">✕</button>
-    <h2 class="accent text-2xl text-teal-ocean mb-4">Monthly Main Options — PDF</h2>
+    <h2 class="accent text-2xl text-teal-ocean mb-4">Monthly Main Options</h2>
 
-    <iframe src="https://drive.google.com/file/d/1lqbuqRqrlVUD-Hp3h_pfA7CUvTJc3hc6/preview"
+    <iframe src="https://drive.google.com/file/d/1jkW14WcHfjhHlyvEG3_ZxOqLNs8vIU27/preview"
       style="width:100%; height:75vh; border:0; border-radius:8px;"></iframe>
-
-    <p class="mt-3 text-sm text-gray-600">Open in a new tab if your phone blocks the preview.</p>
   </div>
 </div>
 
-<!-- Modal: Monthly Snack Options (coming soon) -->
+<!-- Modal 3 — Snack Options -->
 <div id="modalSnackOptions" class="modal-bg">
   <div class="modal-box relative">
     <button class="modal-close" onclick="closeModal('modalSnackOptions')">✕</button>
     <h2 class="accent text-2xl text-teal-ocean mb-4">Monthly Snack Options</h2>
 
-    <p class="mb-4">Snack menu PDF is coming soon. Meanwhile you can view the editable sheet directly:</p>
-    <a href="https://docs.google.com/spreadsheets/d/1WL1eehIB_3a1FQgV2ZjELSmFkr-7PcfWSRfvURZOWhI/edit?usp=drivesdk" target="_blank" class="btn-gold px-4 py-2 rounded">Open Snack Sheet</a>
-
-    <p class="mt-6 text-sm text-gray-600">When you create the snack PDF, send me the link and I’ll embed it here for you.</p>
+    <iframe src="https://drive.google.com/file/d/1lqbuqRqrlVUD-Hp3h_pfA7CUvTJc3hc6/preview"
+      style="width:100%; height:75vh; border:0; border-radius:8px;"></iframe>
   </div>
 </div>
 
-<!-- Modal: Plan Options & Costs -->
+<!-- Modal 4 — Plan Options -->
 <div id="modalPlans" class="modal-bg">
   <div class="modal-box relative">
     <button class="modal-close" onclick="closeModal('modalPlans')">✕</button>
     <h2 class="accent text-2xl text-teal-ocean mb-4">Plan Options & Costs</h2>
 
-    <!-- Show the tuition/pricing image or PDF preview -->
-    <iframe src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/b883bdfad623f42eec2703d1525ee2ecdd980aed/IMG_20251130_002522.jpg"
+    <iframe src="https://drive.google.com/file/d/1mHealZCMjLBGg2fwhely1aXUFZPa1peD/preview"
       style="width:100%; height:75vh; border:0; border-radius:8px;"></iframe>
-
-    <p class="mt-3 text-sm text-gray-600">Open the full image in a new tab if needed.</p>
   </div>
 </div>
 
 <!-- Scripts -->
 <script>
-  // Modal open / close helpers
   function openModal(id){
     const el = document.getElementById(id);
     if(!el) return;
     el.style.display = 'flex';
-    el.style.alignItems = 'center';
-    el.style.justifyContent = 'center';
   }
   function closeModal(id){
     const el = document.getElementById(id);
@@ -271,14 +234,12 @@
     el.style.display = 'none';
   }
 
-  // close modal when clicking the background (outside box)
   document.querySelectorAll('.modal-bg').forEach(bg => {
     bg.addEventListener('click', (e) => {
       if(e.target === bg) bg.style.display = 'none';
     });
   });
 
-  // small accessibility: close modal on ESC
   document.addEventListener('keydown', (e) => {
     if(e.key === 'Escape'){
       document.querySelectorAll('.modal-bg').forEach(m => m.style.display = 'none');
@@ -288,6 +249,7 @@
 
 </body>
 </html>
+
 
 
 
