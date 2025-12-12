@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Epitome Events</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green-lily:#66AC8D;
+  --gold-honey:#F5D66D;
+  --teal-ocean:#368678;
+}
+body{
+  font-family:'Quattrocento', serif;
+  color:var(--teal-ocean);
+  background:#fafafa;
+}
+.accent{ font-family:'Cinzel', serif; }
+.btn-gold{ background:var(--gold-honey); color:var(--teal-ocean); }
+.btn-gold:hover{ filter:brightness(.95); }
+.logo-img { height: 76px; width: auto; }
+@media (min-width:1024px){ .logo-img { height: 90px; } }
+
+/* Fade-in */
+.fade-in {
+  opacity: 0;
+  animation: fadeSlideUp 1.8s ease-out forwards;
+}
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(35px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Highlight Events button */
+.nav-active {
+  background: var(--gold-honey);
+  color: var(--teal-ocean) !important;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Modal styling */
+.modalBG {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+.modalBox {
+  background:white;
+  width:90%;
+  max-width:800px;
+  max-height:90%;
+  overflow:auto;
+  border-radius:10px;
+  padding:20px;
+  position:relative;
+}
+.closeBtn {
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:22px;
+  cursor:pointer;
+  color:var(--teal-ocean);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+    <a href="index.html">
+      <img class="logo-img"
+        src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg"
+        alt="Epitome Education Logo">
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-6 text-sm accent">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="membership.html">Membership</a>
+      <a href="meals.html">Meals & Nutrition</a>
+      <a href="enrollment.html">Enrollment</a>
+
+      <!-- GOLD highlight -->
+      <a href="events.html" class="nav-active">Events</a>
+
+      <a href="https://square.link/u/L8TsrbYo"
+         class="px-3 py-2 rounded-lg btn-gold font-semibold text-sm"
+         target="_blank">Make a Payment</a>
+    </nav>
+
+    <button id="mobileBtn" class="md:hidden text-2xl" style="color:var(--teal-ocean)">☰</button>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
+    <div class="p-4 flex flex-col space-y-2 text-center">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="membership.html">Membership</a>
+      <a href="meals.html">Meals & Nutrition</a>
+      <a href="enrollment.html">Enrollment</a>
+
+      <!-- Mobile gold highlight -->
+      <a href="events.html" class="btn-gold py-2 rounded">Events</a>
+
+      <a href="https://square.link/u/L8TsrbYo" class="btn-gold py-2 rounded mt-2">Make a Payment</a>
+    </div>
+  </div>
+</header>
+
+<script>
+document.getElementById("mobileBtn").onclick = () =>
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+</script>
+
+
+<!-- HERO SECTION -->
+<section class="hero relative" style="
+  background-image: url('https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/a143f34c12c9025cca2a3ccbf45750d182840e70/2103.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <div class="relative z-10 fade-in px-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4"
+        style="color: var(--gold-honey); font-family: 'Cinzel', serif;">
+      Epitome Events
+    </h1>
+    <p class="text-lg md:text-2xl text-white drop-shadow-md font-semibold">
+      Community • Enrichment • Connection
+    </p>
+  </div>
+</section>
+
+
+<!-- EVENT CARDS -->
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <!-- 1: Events Calendar -->
+    <div class="bg-white p-6 rounded-lg shadow text-center">
+      <h3 class="text-xl accent font-semibold mb-3">Events Calendar</h3>
+      <p class="mb-4">View our monthly event calendar.</p>
+      <button onclick="openModal('calendarModal')" class="btn-gold px-6 py-3 rounded-lg font-semibold">
+        View Calendar
+      </button>
+    </div>
+
+    <!-- 2: Events Information -->
+    <div class="bg-white p-6 rounded-lg shadow text-center">
+      <h3 class="text-xl accent font-semibold mb-3">Events Information</h3>
+      <p class="mb-4">Full event descriptions and details.</p>
+      <button onclick="openModal('infoModal')" class="btn-gold px-6 py-3 rounded-lg font-semibold">
+        View Info
+      </button>
+    </div>
+
+    <!-- 3: Registration & Waiver -->
+    <div class="bg-white p-6 rounded-lg shadow text-center">
+      <h3 class="text-xl accent font-semibold mb-3">Registration & Waiver</h3>
+      <p class="mb-4">Submit required forms and sign the waiver.</p>
+      <button onclick="openModal('waiverPdfModal')" class="btn-gold px-6 py-3 rounded-lg font-semibold">
+        Open Form
+      </button>
+    </div>
+
+    <!-- 4: Payment Portal -->
+    <div class="bg-white p-6 rounded-lg shadow text-center">
+      <h3 class="text-xl accent font-semibold mb-3">Payment Portal</h3>
+      <p class="mb-4">Pay for events securely online.</p>
+      <a href="https://square.link/u/L8TsrbYo" target="_blank"
+        class="btn-gold px-6 py-3 rounded-lg font-semibold inline-block">
+        Pay Now
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- -------------- MODALS -------------- -->
+
+<script>
+function openModal(id){ document.getElementById(id).style.display = "flex"; }
+function closeModal(id){ document.getElementById(id).style.display = "none"; }
+</script>
+
+<!-- 1: Calendar Modal -->
+<div id="calendarModal" class="modalBG">
+  <div class="modalBox">
+    <span class="closeBtn" onclick="closeModal('calendarModal')">✖</span>
+    <h2 class="accent text-2xl mb-4">Events Calendar</h2>
+    <iframe src="https://drive.google.com/file/d/1c4cKuiLTBtegajROPWguicRoJedWw5pf/preview"
+            class="w-full h-[70vh] border"></iframe>
+  </div>
+</div>
+
+<!-- 2: Events Information Modal -->
+<div id="infoModal" class="modalBG">
+  <div class="modalBox">
+    <span class="closeBtn" onclick="closeModal('infoModal')">✖</span>
+    <h2 class="accent text-2xl mb-4">Events Information</h2>
+
+    <p class="text-center text-gray-500 mb-4">
+      PDF placeholder — send it at 7pm and I’ll insert it instantly.
+    </p>
+
+    <div class="w-full h-64 border flex items-center justify-center text-gray-400">
+      Awaiting PDF…
+    </div>
+  </div>
+</div>
+
+<!-- 3A: Waiver PDF Modal -->
+<div id="waiverPdfModal" class="modalBG">
+  <div class="modalBox">
+    <span class="closeBtn" onclick="closeModal('waiverPdfModal')">✖</span>
+    <h2 class="accent text-2xl mb-4">Registration & Waiver</h2>
+
+    <iframe src="https://drive.google.com/file/d/1vim8fnXGIcAWv8oJ0w8tjuewmybbGsSV/preview"
+            class="w-full h-[70vh] border mb-4"></iframe>
+
+    <button onclick="closeModal('waiverPdfModal'); openModal('waiverFormModal');"
+            class="btn-gold px-6 py-3 rounded-lg font-semibold w-full">
+      Continue to Registration Form
+    </button>
+  </div>
+</div>
+
+<!-- 3B: Registration Form Modal -->
+<div id="waiverFormModal" class="modalBG">
+  <div class="modalBox">
+    <span class="closeBtn" onclick="closeModal('waiverFormModal')">✖</span>
+    <h2 class="accent text-2xl mb-4">Event Registration Form</h2>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+
+      <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE">
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <input type="text" name="first_name" placeholder="First Name" class="border p-2 w-full" required>
+        <input type="text" name="last_name" placeholder="Last Name" class="border p-2 w-full" required>
+      </div>
+
+      <input type="date" name="dob" class="border p-2 w-full" required>
+      <input type="text" name="address" placeholder="Address" class="border p-2 w-full" required>
+      <input type="email" name="email" placeholder="Email Address" class="border p-2 w-full" required>
+      <input type="tel" name="phone" placeholder="Phone Number" class="border p-2 w-full" required>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <input type="text" name="emergency_name" placeholder="Emergency Contact Name" class="border p-2 w-full" required>
+        <input type="tel" name="emergency_phone" placeholder="Emergency Contact Phone" class="border p-2 w-full" required>
+      </div>
+
+      <label class="block font-semibold mt-4">Signature (type full name)</label>
+      <input type="text" name="signature" class="border p-2 w-full" required>
+
+      <button class="btn-gold px-6 py-3 rounded-lg font-semibold w-full mt-4">
+        Submit Registration
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="bg-white border-t mt-10">
+  <div class="max-w-6xl mx-auto py-10 text-center">
+    <p>Email: <strong>epitomejenn@gmail.com</strong></p>
+    <p>Phone: <strong>(432) 415-4556</strong></p>
+    <p class="text-sm text-gray-500 mt-4">&copy; 2025 Epitome Education</p>
+  </div>
+</footer>
+
+</body>
+</html>
