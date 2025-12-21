@@ -288,7 +288,16 @@
     }
   }
 </script>
+<script>
+  document.getElementById("waiverForm").addEventListener("submit", () => {
+    if (!signaturePad.isEmpty()) {
+      document.getElementById("signature_data").value = signaturePad.toDataURL();
+    }
 
+    const now = new Date().toLocaleString();
+    document.querySelector('input[name="submission_date"]').value = now;
+  });
+</script>
 </body>
 </html>
 
