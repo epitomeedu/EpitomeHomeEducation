@@ -241,6 +241,23 @@
         <input type="hidden" name="signature_data" id="signature_data">
       </div>
 
+    <!-- Enrollment Application Confirmation -->
+<div class="mt-6">
+  <label class="flex items-start gap-3">
+    <input
+      type="checkbox"
+      name="enrollment_application_completed"
+      value="Yes"
+      required
+      class="mt-1 accent-[var(--gold-honey)]"
+    >
+    <span class="text-sm">
+      I confirm that I have completed and reviewed the
+      <strong>Enrollment Application</strong>.
+    </span>
+  </label>
+</div>
+
       <button onclick="saveSignature()" class="px-6 py-3 btn-gold rounded-lg font-semibold shadow">
         Submit Waiver
       </button>
