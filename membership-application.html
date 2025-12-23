@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership Application – Epitome Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Quattrocento', serif; background:#fcfcfc; color:#368678; }
+    .accent { font-family: 'Cinzel', serif; }
+    .btn-gold { background:#F5D66D; color:#368678; }
+    .btn-gold:hover { filter: brightness(.95); }
+  </style>
+</head>
+<body>
+
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+    <img class="logo-img h-20" src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg">
+    <nav class="hidden md:flex items-center space-x-6 text-sm accent">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="membership.html" class="text-[var(--gold-honey)]">Membership</a>
+      <a href="meals.html">Meals & Nutrition</a>
+      <a href="enrollment.html">Enrollment</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto p-6">
+  <h1 class="accent text-4xl text-center mb-6">Membership Application</h1>
+  <p class="text-center mb-10">Fill out this form to start your membership with Epitome Education.</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6 bg-white p-8 rounded-xl shadow-lg border border-[#B6DAD1]">
+    <!-- Web3Forms token -->
+    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+    <input type="hidden" name="subject" value="New Membership Application">
+    <input type="hidden" name="redirect" value="thank-you.html">
+
+    <div>
+      <label class="block mb-1 font-semibold">Parent Name</label>
+      <input type="text" name="parent_name" required class="w-full p-3 border rounded-lg">
+    </div>
+
+    <div>
+      <label class="block mb-1 font-semibold">Email</label>
+      <input type="email" name="email" required class="w-full p-3 border rounded-lg">
+    </div>
+
+    <div>
+      <label class="block mb-1 font-semibold">Phone</label>
+      <input type="tel" name="phone" required class="w-full p-3 border rounded-lg">
+    </div>
+
+    <div>
+      <label class="block mb-1 font-semibold">Number of Children</label>
+      <input type="number" name="children_count" required class="w-full p-3 border rounded-lg">
+    </div>
+
+    <div>
+      <label class="block mb-1 font-semibold">Additional Notes</label>
+      <textarea name="notes" rows="4" class="w-full p-3 border rounded-lg"></textarea>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn-gold px-8 py-3 rounded-lg font-semibold">Submit Application</button>
+    </div>
+  </form>
+</main>
+
+</body>
+</html>
