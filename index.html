@@ -547,6 +547,19 @@
   // small helpful instructions for user (console)
   console.log("If you want to replace the placeholder images, swap the src attributes with raw GitHub urls.");
 </script>
+<script>
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+
+    if (link.getAttribute('href') === window.location.hash) {
+      link.classList.add('active');
+    }
+  });
+</script>
 
 </body>
 </html>
