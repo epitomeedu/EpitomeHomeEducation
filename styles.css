@@ -1,0 +1,30 @@
+/* =====================================================
+   EPITOME EDUCATION – SHARED SITE STYLES
+   Navigation hover + active state
+   ===================================================== */
+
+/* Brand colors */
+:root {
+  --green-lily: #66AC8D;
+  --gold-honey: #F5D66D;
+  --teal-ocean: #368678;
+}
+
+/* ---------------------------------
+   Navigation links
+---------------------------------- */
+.nav-link {
+  color: var(--teal-ocean);
+  transition: color 0.25s ease, border-bottom 0.25s ease;
+  padding-bottom: 4px;
+}
+
+.nav-link:hover {
+  color: var(--gold-honey);
+}
+
+/* Active page / section */
+.nav-link.active {
+  color: var(--gold-honey);
+  border-bottom: 2px solid var(--gold-honey);
+}
