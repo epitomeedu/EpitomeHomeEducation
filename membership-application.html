@@ -16,7 +16,7 @@
   --shade:#CFE6E0;
 }
 
-/* RESET / PRINT BASE */
+/* BASE */
 *{ box-sizing:border-box; }
 body{
   margin:0;
@@ -24,7 +24,7 @@ body{
   color:var(--teal);
   background:#fff;
 }
-input,select{
+input{
   border:none;
   border-bottom:1px solid var(--line);
   width:100%;
@@ -32,11 +32,12 @@ input,select{
   font-family:inherit;
   font-size:14px;
 }
-input[type=checkbox],input[type=radio]{
+input[type=checkbox],
+input[type=radio],
+input[type=file]{
   width:auto;
-  margin-right:6px;
 }
-h1,h2{
+h1{
   font-family:'Cinzel', serif;
   font-weight:600;
   margin:0;
@@ -56,7 +57,7 @@ h1,h2{
 }
 .logo{ height:70px; }
 
-/* SECTION BAR */
+/* SECTION */
 .section-title{
   background:var(--shade);
   border:1px solid var(--teal);
@@ -67,28 +68,16 @@ h1,h2{
   margin:18px 0 10px;
 }
 
-/* GRID HELPERS */
+/* GRIDS */
 .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 .grid-3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
 .grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
 
-.box{
-  border:1px solid var(--teal);
-  padding:8px;
-  min-height:80px;
-  font-size:12px;
-}
-
-/* SMALL TEXT */
 .small{ font-size:12px; }
+.note{ font-size:11px; color:#555; margin-top:6px; }
+.required{ font-size:11px; color:#8a1c1c; }
 
-/* CHECK ROW */
-.check-row label{
-  margin-right:16px;
-  font-size:13px;
-}
-
-/* SIGNATURE SPACE */
+/* SIGNATURE */
 .signature{
   margin-top:30px;
   display:grid;
@@ -96,16 +85,14 @@ h1,h2{
   gap:20px;
 }
 
-/* PRINT CLEAN */
+/* PRINT */
 @media print{
-  body{ margin:0; }
   .page{ padding:0.5in; }
 }
 </style>
 </head>
 
 <body>
-
 <div class="page">
 
 <!-- HEADER -->
@@ -117,7 +104,6 @@ h1,h2{
 </div>
 
 <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
-
 <input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
 <input type="hidden" name="subject" value="New Admission Application">
 
@@ -126,14 +112,26 @@ h1,h2{
 
 <div class="grid-2">
   <div>
-    Name<br><input name="parent1_name">
-    Address<br><input name="address">
-    Phone Number<br><input name="parent1_phone">
-    Email<br><input name="parent1_email">
-    Employer<br><input name="parent1_employer">
+    Full Name <span class="required">*</span><br><input name="parent_name" required>
+    Address <span class="required">*</span><br><input name="parent_address" required>
+    Phone <span class="required">*</span><br><input name="parent_phone" required>
+    Email <span class="required">*</span><br><input name="parent_email" required>
+    Employer<br><input name="parent_employer">
   </div>
-  <div class="box small">
-    Identification & Vehicle Information
+
+  <div class="small">
+    <strong>Verification Documents (Required)</strong><br><br>
+
+    Driver’s License <span class="required">*</span><br>
+    <input type="file" name="parent_drivers_license" accept="image/*,.pdf" required>
+
+    <br><br>
+    Proof of Current Address <span class="required">*</span><br>
+    <input type="file" name="parent_proof_address" accept="image/*,.pdf" required>
+
+    <p class="note">
+      Documents are used for verification purposes only and handled securely.
+    </p>
   </div>
 </div>
 
@@ -142,16 +140,16 @@ h1,h2{
 
 <div class="grid-3">
   <div>
-    Name<br><input name="child1_name">
-    Age<br><input name="child1_age">
-    Current School<br><input name="child1_school">
+    Name<br><input name="child_name">
+    Age<br><input name="child_age">
+    Current School<br><input name="child_school">
   </div>
   <div>
-    Academic Goals<br><input name="child1_goals">
-    Preferred Language<br><input name="child1_language">
-    Allergies<br><input name="child1_allergies">
+    Academic Goals<br><input name="child_goals">
+    Preferred Language<br><input name="child_language">
+    Allergies<br><input name="child_allergies">
   </div>
-  <div class="box small">
+  <div class="small">
     Office Use Only
   </div>
 </div>
@@ -159,14 +157,14 @@ h1,h2{
 <!-- PROGRAM -->
 <div class="section-title">PROGRAM INFORMATION</div>
 
-<div class="grid-2">
-  <div class="check-row">
+<div class="grid-2 small">
+  <div>
     Desired Classroom:<br>
     <label><input type="checkbox" name="classroom[]" value="3-6">3–6</label>
     <label><input type="checkbox" name="classroom[]" value="7-10">7–10</label>
     <label><input type="checkbox" name="classroom[]" value="11-13">11–13</label>
   </div>
-  <div class="check-row">
+  <div>
     Attendance:<br>
     <label><input type="radio" name="attendance" value="Full Time">Full-Time</label>
     <label><input type="radio" name="attendance" value="Part Time">Part-Time</label>
@@ -198,12 +196,19 @@ h1,h2{
 
 <div class="grid-2">
   <div>
-    Name<br><input name="emergency_name">
-    Phone<br><input name="emergency_phone">
+    Name <span class="required">*</span><br><input name="emergency_name" required>
+    Relationship <span class="required">*</span><br><input name="emergency_relation" required>
+    Phone <span class="required">*</span><br><input name="emergency_phone" required>
     Email<br><input name="emergency_email">
   </div>
-  <div class="box small">
-    Identification & Vehicle Information
+
+  <div class="small">
+    Government ID <span class="required">*</span><br>
+    <input type="file" name="emergency_id" accept="image/*,.pdf" required>
+
+    <p class="note">
+      Emergency contacts must present valid identification.
+    </p>
   </div>
 </div>
 
@@ -212,39 +217,24 @@ h1,h2{
 
 <div class="grid-2">
   <div>
-    Name & Relationship<br><input name="pickup1">
-    Phone<br><input name="pickup1_phone">
-  </div>
-  <div class="box small">
-    Identification & Vehicle Information
-  </div>
-</div>
-
-  <!-- DOCUMENT UPLOADS -->
-<div class="section-title">REQUIRED DOCUMENTATION</div>
-
-<div class="small">
-  <p>Please upload the following documents:</p>
-
-  <div style="margin-top:10px">
-    <label>
-      Valid Driver’s License<br>
-      <input type="file" name="drivers_license" accept="image/*,.pdf">
-    </label>
+    Authorized Person Name <span class="required">*</span><br><input name="pickup_name" required>
+    Relationship <span class="required">*</span><br><input name="pickup_relation" required>
+    Phone <span class="required">*</span><br><input name="pickup_phone" required>
   </div>
 
-  <div style="margin-top:10px">
-    <label>
-      Proof of Current Address<br>
-      <input type="file" name="proof_of_address" accept="image/*,.pdf">
-    </label>
+  <div class="small">
+    Government ID <span class="required">*</span><br>
+    <input type="file" name="pickup_id" accept="image/*,.pdf" required>
+
+    <p class="note">
+      Authorized individuals must present valid ID at pick-up.
+    </p>
   </div>
 </div>
-
 
 <!-- SIGNATURE -->
 <div class="signature small">
-  <div>Parent/Guardian Signature<br><input></div>
+  <div>Parent / Guardian Signature<br><input></div>
   <div>Date<br><input></div>
 </div>
 
@@ -256,7 +246,7 @@ h1,h2{
 
 </form>
 </div>
-
 </body>
 </html>
+
 
