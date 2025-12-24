@@ -107,94 +107,47 @@ h1{
 <input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
 <input type="hidden" name="subject" value="New Admission Application">
 
-<!-- PARENT 1 -->
+<!-- PARENT -->
 <div class="section-title">PARENT / GUARDIAN INFORMATION</div>
 
 <div class="grid-2">
   <div>
-    Full Name <span class="required">*</span><br><input name="parent1_name" required>
-    Address <span class="required">*</span><br><input name="parent1_address" required>
-    Phone <span class="required">*</span><br><input name="parent1_phone" required>
-    Email <span class="required">*</span><br><input name="parent1_email" required>
-    Employer<br><input name="parent1_employer">
-    <hr style="margin:10px 0">
-    Vehicle Make/Model<br><input name="parent1_vehicle_make_model">
-    Vehicle Plate Number<br><input name="parent1_vehicle_plate">
+    Full Name <span class="required">*</span><br><input name="parent_name" required>
+    Address <span class="required">*</span><br><input name="parent_address" required>
+    Phone <span class="required">*</span><br><input name="parent_phone" required>
+    Email <span class="required">*</span><br><input name="parent_email" required>
+    Employer<br><input name="parent_employer">
   </div>
 
   <div class="small">
     <strong>Verification Documents (Required)</strong><br><br>
+
     Driver’s License <span class="required">*</span><br>
-    <input type="file" name="parent1_drivers_license" accept="image/*,.pdf" required>
+    <input type="file" name="parent_drivers_license" accept="image/*,.pdf" required>
+
     <br><br>
     Proof of Current Address <span class="required">*</span><br>
-    <input type="file" name="parent1_proof_address" accept="image/*,.pdf" required>
+    <input type="file" name="parent_proof_address" accept="image/*,.pdf" required>
+
     <p class="note">
       Documents are used for verification purposes only and handled securely.
     </p>
   </div>
 </div>
 
-<!-- SECOND PARENT TOGGLE -->
-<div class="small" style="margin-top:10px;">
-  <label><input type="checkbox" id="add_parent2" onclick="document.getElementById('parent2_section').style.display=this.checked?'grid':'none'"> Add Second Parent / Guardian</label>
-</div>
-
-<div class="grid-2" id="parent2_section" style="display:none; margin-top:10px;">
-  <div>
-    Full Name <span class="required">*</span><br><input name="parent2_name">
-    Address <span class="required">*</span><br><input name="parent2_address">
-    Phone <span class="required">*</span><br><input name="parent2_phone">
-    Email <span class="required">*</span><br><input name="parent2_email">
-    Employer<br><input name="parent2_employer">
-    <hr style="margin:10px 0">
-    Vehicle Make/Model<br><input name="parent2_vehicle_make_model">
-    Vehicle Plate Number<br><input name="parent2_vehicle_plate">
-  </div>
-
-  <div class="small">
-    <strong>Verification Documents (Required)</strong><br><br>
-    Driver’s License<br>
-    <input type="file" name="parent2_drivers_license" accept="image/*,.pdf">
-    <br><br>
-    Proof of Current Address<br>
-    <input type="file" name="parent2_proof_address" accept="image/*,.pdf">
-  </div>
-</div>
-
-<!-- CHILD 1 -->
+<!-- CHILD -->
 <div class="section-title">CHILD(REN) INFORMATION</div>
 
 <div class="grid-3">
   <div>
-    Name<br><input name="child1_name">
-    Age<br><input name="child1_age">
-    Current School<br><input name="child1_school">
+    Name<br><input name="child_name">
+    Age<br><input name="child_age">
+    Current School<br><input name="child_school">
   </div>
   <div>
-    Academic Goals<br><input name="child1_goals">
-    Preferred Language<br><input name="child1_language">
-    Allergies<br><input name="child1_allergies">
-  </div>
-  <div class="small">
-    Office Use Only
-  </div>
-</div>
-
-<div class="small" style="margin-top:10px;">
-  <label><input type="checkbox" id="add_child2" onclick="document.getElementById('child2_section').style.display=this.checked?'grid':'none'"> Add Second Child</label>
-</div>
-
-<div class="grid-3" id="child2_section" style="display:none; margin-top:10px;">
-  <div>
-    Name<br><input name="child2_name">
-    Age<br><input name="child2_age">
-    Current School<br><input name="child2_school">
-  </div>
-  <div>
-    Academic Goals<br><input name="child2_goals">
-    Preferred Language<br><input name="child2_language">
-    Allergies<br><input name="child2_allergies">
+    Academic Goals<br><input name="child_goals">
+    Preferred Language<br><input name="child_language">
+    Allergies<br><input name="child_allergies">
   </div>
   <div class="small">
     Office Use Only
@@ -247,14 +200,12 @@ h1{
     Relationship <span class="required">*</span><br><input name="emergency_relation" required>
     Phone <span class="required">*</span><br><input name="emergency_phone" required>
     Email<br><input name="emergency_email">
-    <hr style="margin:10px 0">
-    Vehicle Make/Model<br><input name="emergency_vehicle_make_model">
-    Vehicle Plate Number<br><input name="emergency_vehicle_plate">
   </div>
 
   <div class="small">
     Government ID <span class="required">*</span><br>
     <input type="file" name="emergency_id" accept="image/*,.pdf" required>
+
     <p class="note">
       Emergency contacts must present valid identification.
     </p>
@@ -269,14 +220,12 @@ h1{
     Authorized Person Name <span class="required">*</span><br><input name="pickup_name" required>
     Relationship <span class="required">*</span><br><input name="pickup_relation" required>
     Phone <span class="required">*</span><br><input name="pickup_phone" required>
-    <hr style="margin:10px 0">
-    Vehicle Make/Model<br><input name="pickup_vehicle_make_model">
-    Vehicle Plate Number<br><input name="pickup_vehicle_plate">
   </div>
 
   <div class="small">
     Government ID <span class="required">*</span><br>
     <input type="file" name="pickup_id" accept="image/*,.pdf" required>
+
     <p class="note">
       Authorized individuals must present valid ID at pick-up.
     </p>
@@ -296,15 +245,10 @@ h1{
 </button>
 
 </form>
-
-<!-- OPTIONAL JAVASCRIPT FOR TOGGLES -->
-<script>
-  // Already inline onclick used for toggles
-</script>
-
 </div>
 </body>
 </html>
+
 
 
 
