@@ -1,154 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Membership Application – Epitome Education</title>
+<meta charset="UTF-8">
+<title>Admission Application – Epitome Education</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#368678;
+  --gold:#F5D66D;
+  --line:#E6D9A8;
+  --shade:#CFE6E0;
+}
 
-  <style>
-    :root {
-      --gold:#F5D66D;
-      --teal:#368678;
-      --border:#B6DAD1;
-    }
-    body {
-      font-family:'Quattrocento', serif;
-      background:#fcfcfc;
-      color:var(--teal);
-    }
-    .accent { font-family:'Cinzel', serif; }
-    .btn-gold {
-      background:var(--gold);
-      color:var(--teal);
-    }
-    .btn-gold:hover { filter:brightness(.95); }
-    fieldset { border:1px solid var(--border); padding:1.5rem; border-radius:1rem; }
-    legend { font-weight:600; padding:0 .5rem; }
-  </style>
+/* RESET / PRINT BASE */
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family:'Quattrocento', serif;
+  color:var(--teal);
+  background:#fff;
+}
+input,select{
+  border:none;
+  border-bottom:1px solid var(--line);
+  width:100%;
+  padding:4px 2px;
+  font-family:inherit;
+  font-size:14px;
+}
+input[type=checkbox],input[type=radio]{
+  width:auto;
+  margin-right:6px;
+}
+h1,h2{
+  font-family:'Cinzel', serif;
+  font-weight:600;
+  margin:0;
+}
+.page{
+  max-width:850px;
+  margin:0 auto;
+  padding:24px;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:16px;
+}
+.logo{ height:70px; }
+
+/* SECTION BAR */
+.section-title{
+  background:var(--shade);
+  border:1px solid var(--teal);
+  text-align:center;
+  padding:6px;
+  font-family:'Cinzel', serif;
+  font-size:14px;
+  margin:18px 0 10px;
+}
+
+/* GRID HELPERS */
+.grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.grid-3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
+.grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+
+.box{
+  border:1px solid var(--teal);
+  padding:8px;
+  min-height:80px;
+  font-size:12px;
+}
+
+/* SMALL TEXT */
+.small{ font-size:12px; }
+
+/* CHECK ROW */
+.check-row label{
+  margin-right:16px;
+  font-size:13px;
+}
+
+/* SIGNATURE SPACE */
+.signature{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+}
+
+/* PRINT CLEAN */
+@media print{
+  body{ margin:0; }
+  .page{ padding:0.5in; }
+}
+</style>
 </head>
 
 <body>
 
+<div class="page">
+
 <!-- HEADER -->
-<header class="bg-white shadow sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto flex items-center p-4">
-    <img class="h-20"
-      src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/19086f6dc922b7b2e7911150689f04d4ca3477e5/Screenshot_20251031_143717_Canva(1).jpg"
-      alt="Epitome Education Logo">
-  </div>
-</header>
-
-<main class="max-w-5xl mx-auto p-6">
-
-<h1 class="accent text-4xl text-center mb-8">Admission Application</h1>
-
-<form action="https://api.web3forms.com/submit"
-      method="POST"
-      enctype="multipart/form-data"
-      class="space-y-10 bg-white p-8 rounded-xl shadow-lg border">
-
-<!-- Web3Forms -->
-<input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
-<input type="hidden" name="subject" value="New Admission Application">
-<input type="hidden" name="redirect" value="thankyou.html">
-
-<!-- PARENT INFO -->
-<fieldset>
-  <legend>Parent / Guardian Information</legend>
-
-  <div class="grid md:grid-cols-2 gap-4 mt-4">
-    <input name="parent1_name" placeholder="First Parent Name" class="border p-3 rounded">
-    <input name="parent1_phone" placeholder="Phone Number" class="border p-3 rounded">
-    <input name="parent1_email" placeholder="Email" class="border p-3 rounded">
-    <input name="parent1_employer" placeholder="Employer" class="border p-3 rounded">
-    <input name="parent1_vehicle" placeholder="Vehicle Information" class="border p-3 rounded">
-    <input name="address" placeholder="Address" class="border p-3 rounded md:col-span-2">
-  </div>
-</fieldset>
-
-<!-- CHILD INFO -->
-<fieldset>
-  <legend>Child Information</legend>
-
-  <div class="grid md:grid-cols-2 gap-4 mt-4">
-    <input name="child1_name" placeholder="Child Name" class="border p-3 rounded">
-    <input name="child1_age" placeholder="Age" class="border p-3 rounded">
-    <input name="child1_school" placeholder="Current School" class="border p-3 rounded">
-    <input name="child1_language" placeholder="Preferred Language" class="border p-3 rounded">
-    <input name="child1_goals" placeholder="Academic Goals" class="border p-3 rounded md:col-span-2">
-    <input name="child1_allergies" placeholder="Allergies" class="border p-3 rounded md:col-span-2">
-  </div>
-</fieldset>
-
-<!-- PROGRAM INFO -->
-<fieldset>
-  <legend>Program Information</legend>
-
-  <div class="space-y-3 mt-4">
-    <p class="font-semibold">Desired Classroom</p>
-    <label><input type="checkbox" name="classroom[]" value="3-6"> 3–6</label><br>
-    <label><input type="checkbox" name="classroom[]" value="7-10"> 7–10</label><br>
-    <label><input type="checkbox" name="classroom[]" value="11-13"> 11–13</label>
-  </div>
-
-  <div class="mt-4">
-    <p class="font-semibold">Attendance Type</p>
-    <label><input type="radio" name="attendance" value="Full Time"> Full Time</label>
-    <label class="ml-4"><input type="radio" name="attendance" value="Part Time"> Part Time</label>
-  </div>
-</fieldset>
-
-<!-- MEMBERSHIP -->
-<fieldset>
-  <legend>Membership Selection</legend>
-
-  <label><input type="radio" name="membership" value="Basic"> Basic Membership</label><br>
-  <label><input type="radio" name="membership" value="Family Access"> Family Access</label>
-</fieldset>
-
-<!-- MEALS -->
-<fieldset>
-  <legend>Meal Plan</legend>
-
-  <label><input type="checkbox" name="meals[]" value="Breakfast"> Breakfast</label><br>
-  <label><input type="checkbox" name="meals[]" value="Lunch"> Lunch</label><br>
-  <label><input type="checkbox" name="meals[]" value="Dinner"> Dinner</label><br>
-  <input name="meal_days" placeholder="Specify Days" class="border p-3 rounded w-full mt-3">
-</fieldset>
-
-<!-- EMERGENCY -->
-<fieldset>
-  <legend>Emergency Contact</legend>
-
-  <div class="grid md:grid-cols-2 gap-4 mt-4">
-    <input name="emergency_name" placeholder="Name" class="border p-3 rounded">
-    <input name="emergency_phone" placeholder="Phone" class="border p-3 rounded">
-    <input name="emergency_email" placeholder="Email" class="border p-3 rounded">
-    <input name="emergency_relation" placeholder="Relationship" class="border p-3 rounded">
-  </div>
-</fieldset>
-
-<!-- PHOTO -->
-<fieldset>
-  <legend>Upload Photo</legend>
-  <input type="file" name="photo" class="border p-3 rounded w-full">
-</fieldset>
-
-<!-- SUBMIT -->
-<div class="text-center">
-  <button class="btn-gold px-12 py-4 rounded-lg font-semibold shadow">
-    Submit Application
-  </button>
+<div class="header">
+  <img class="logo"
+    src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/996b9d2ba1911b75e20448623008baca5996505a/Screenshot_20251031_143717_Canva(1).jpg"
+    alt="Epitome Education">
+  <h1>ADMISSION APPLICATION</h1>
 </div>
 
+<form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+
+<input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
+<input type="hidden" name="subject" value="New Admission Application">
+
+<!-- PARENT -->
+<div class="section-title">PARENT / GUARDIAN INFORMATION</div>
+
+<div class="grid-2">
+  <div>
+    Name<br><input name="parent1_name">
+    Address<br><input name="address">
+    Phone Number<br><input name="parent1_phone">
+    Email<br><input name="parent1_email">
+    Employer<br><input name="parent1_employer">
+  </div>
+  <div class="box small">
+    Identification & Vehicle Information
+  </div>
+</div>
+
+<!-- CHILD -->
+<div class="section-title">CHILD(REN) INFORMATION</div>
+
+<div class="grid-3">
+  <div>
+    Name<br><input name="child1_name">
+    Age<br><input name="child1_age">
+    Current School<br><input name="child1_school">
+  </div>
+  <div>
+    Academic Goals<br><input name="child1_goals">
+    Preferred Language<br><input name="child1_language">
+    Allergies<br><input name="child1_allergies">
+  </div>
+  <div class="box small">
+    Office Use Only
+  </div>
+</div>
+
+<!-- PROGRAM -->
+<div class="section-title">PROGRAM INFORMATION</div>
+
+<div class="grid-2">
+  <div class="check-row">
+    Desired Classroom:<br>
+    <label><input type="checkbox" name="classroom[]" value="3-6">3–6</label>
+    <label><input type="checkbox" name="classroom[]" value="7-10">7–10</label>
+    <label><input type="checkbox" name="classroom[]" value="11-13">11–13</label>
+  </div>
+  <div class="check-row">
+    Attendance:<br>
+    <label><input type="radio" name="attendance" value="Full Time">Full-Time</label>
+    <label><input type="radio" name="attendance" value="Part Time">Part-Time</label>
+  </div>
+</div>
+
+<!-- MEMBERSHIP -->
+<div class="section-title">MEMBERSHIP INFORMATION</div>
+
+<div class="grid-4 small">
+  <label><input type="checkbox" name="membership[]" value="Single">Single Child</label>
+  <label><input type="checkbox" name="membership[]" value="Two">Two Children</label>
+  <label><input type="checkbox" name="membership[]" value="Three">Three Children</label>
+  <label><input type="checkbox" name="membership[]" value="Four">Four Children</label>
+</div>
+
+<!-- MEALS -->
+<div class="section-title">MEAL PLAN</div>
+
+<div class="grid-4 small">
+  <label><input type="checkbox" name="meals[]" value="Breakfast">Breakfast</label>
+  <label><input type="checkbox" name="meals[]" value="Lunch">Lunch</label>
+  <label><input type="checkbox" name="meals[]" value="Dinner">Dinner</label>
+  <input name="meal_days" placeholder="Days of Week">
+</div>
+
+<!-- EMERGENCY -->
+<div class="section-title">EMERGENCY CONTACT INFORMATION</div>
+
+<div class="grid-2">
+  <div>
+    Name<br><input name="emergency_name">
+    Phone<br><input name="emergency_phone">
+    Email<br><input name="emergency_email">
+  </div>
+  <div class="box small">
+    Identification & Vehicle Information
+  </div>
+</div>
+
+<!-- PICKUP -->
+<div class="section-title">PICK-UP & DROP-OFF AUTHORIZATION</div>
+
+<div class="grid-2">
+  <div>
+    Name & Relationship<br><input name="pickup1">
+    Phone<br><input name="pickup1_phone">
+  </div>
+  <div class="box small">
+    Identification & Vehicle Information
+  </div>
+</div>
+
+<!-- SIGNATURE -->
+<div class="signature small">
+  <div>Parent/Guardian Signature<br><input></div>
+  <div>Date<br><input></div>
+</div>
+
+<br>
+
+<button style="background:var(--gold);border:none;padding:10px 30px;font-weight:600;">
+  Submit Application
+</button>
+
 </form>
-</main>
+</div>
 
 </body>
 </html>
+
