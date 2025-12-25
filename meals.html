@@ -133,12 +133,6 @@
 
   <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Mobile menu toggle
-  const mobileBtn = document.getElementById('mobileBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
-  // Highlight current page in nav
   const navLinks = document.querySelectorAll('.nav-link');
   let currentPage = window.location.pathname.split('/').pop();
   if (currentPage === '') currentPage = 'index.html';
@@ -148,8 +142,16 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add('nav-active');
     }
   });
+
+  const mobileBtn = document.getElementById('mobileBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  document.querySelectorAll('#mobileMenu a').forEach(a=>{
+    a.addEventListener('click', ()=> mobileMenu.classList.add('hidden'));
+  });
 });
 </script>
+
 
 <!-- HERO -->
 <section class="meals-hero relative">
