@@ -52,6 +52,43 @@
 
 <body>
 
+<!-- HEADER -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-center gap-10 p-4">
+    <a href="index.html" class="flex items-center">
+  <img class="logo-img h-14" src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg" alt="Epitome Education Logo">
+</a>
+
+
+    <nav class="hidden md:flex items-center justify-center gap-6 text-sm accent">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Curriculum</a>
+      <a href="membership.html">Membership</a>
+      <a href="meals.html">Meals &amp; Nutrition</a>
+      <a href="enrollment.html">Admissions</a>
+      <a href="contact.html" id="contactNav">Contact</a>
+      
+    </nav>
+
+    <div class="md:hidden">
+      <button id="mobileBtn" aria-label="open menu" class="text-2xl" style="color:var(--teal-ocean)">☰</button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
+    <div class="p-4 flex flex-col space-y-2 mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Curriculum</a>
+      <a href="membership.html">Membership</a>
+      <a href="meals.html">Meals &amp; Nutrition</a>
+      <a href="enrollment.html">Admissions</a>
+      <a href="contact.html" id="contactNavMobile">Contact</a>
+      
+    </div>
+  </div>
+</header>
+
+  
 <main class="min-h-screen flex items-center justify-center px-6">
   <div class="text-center max-w-xl">
 
