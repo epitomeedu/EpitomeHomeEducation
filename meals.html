@@ -131,24 +131,6 @@
   </div>
 </header>
 
-<script>
-  const mobileBtn = document.getElementById('mobileBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  mobileBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
-  document.querySelectorAll('#mobileMenu a').forEach(a=>{
-    a.addEventListener('click', ()=> mobileMenu.classList.add('hidden'));
-  });
-
-  (function setActiveNav(){
-    const path = location.pathname.split('/').pop();
-    if(path === 'meals.html') {
-      document.getElementById('mealsNav').classList.add('nav-active');
-      const m = document.getElementById('mealsNavMobile');
-      if(m) m.classList.add('nav-active');
-    }
-  })();
-</script>
-
   <script>
 document.addEventListener("DOMContentLoaded", () => {
   // Mobile menu toggle
