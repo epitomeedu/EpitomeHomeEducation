@@ -48,18 +48,40 @@
       position: relative;
     }
 
-    /*NAV GOLD HOVER + ACTIVE */
-    .nav-link{
-      color: var(--teal-ocean);
-    }
-    
+    /* NAV GOLD HOVER + ACTIVE */
     .nav-link {
-        color: var(--gold-honey);
+      color: var(--teal-ocean);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s all;
+    }
+
+    .nav-link:hover {
+      color: var(--gold-honey);
+      text-shadow: 0 0 8px var(--gold-honey);
     }
 
     .nav-active {
       color: var(--gold-honey) !important;
       font-weight: 600;
+      text-shadow: 0 0 8px var(--gold-honey);
+    }
+
+    /* BUTTONS GOLD GLOW */
+    .btn-gold {
+      background: var(--gold-honey);
+      color: var(--teal-ocean);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      display: inline-block;
+      transition: 0.3s all;
+      text-decoration: none;
+    }
+
+    .btn-gold:hover {
+      box-shadow: 0 0 15px var(--gold-honey);
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -70,18 +92,16 @@
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-center gap-10 p-4">
     <a href="index.html" class="flex items-center">
-  <img class="logo-img h-14" src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg" alt="Epitome Education Logo">
-</a>
-
+      <img class="logo-img h-14" src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg" alt="Epitome Education Logo">
+    </a>
 
     <nav class="hidden md:flex items-center justify-center gap-6 text-sm accent">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html">Membership</a>
-      <a href="meals.html">Meals &amp; Nutrition</a>
-      <a href="enrollment.html">Admissions</a>
-      <a href="contact.html" id="contactNav">Contact</a>
-      
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="programs.html" class="nav-link">Curriculum</a>
+      <a href="membership.html" class="nav-link">Membership</a>
+      <a href="meals.html" class="nav-link">Meals &amp; Nutrition</a>
+      <a href="enrollment.html" class="nav-link">Admissions</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </nav>
 
     <div class="md:hidden">
@@ -89,20 +109,19 @@
     </div>
   </div>
 
+  <!-- MOBILE NAV -->
   <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
     <div class="p-4 flex flex-col space-y-2 mobile-nav">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html">Membership</a>
-      <a href="meals.html">Meals &amp; Nutrition</a>
-      <a href="enrollment.html">Admissions</a>
-      <a href="contact.html" id="contactNavMobile">Contact</a>
-      
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="programs.html" class="nav-link">Curriculum</a>
+      <a href="membership.html" class="nav-link">Membership</a>
+      <a href="meals.html" class="nav-link">Meals &amp; Nutrition</a>
+      <a href="enrollment.html" class="nav-link">Admissions</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </div>
 </header>
 
-  
 <main class="min-h-screen flex items-center justify-center px-6">
   <div class="text-center max-w-xl">
 
@@ -122,68 +141,48 @@
 
     <!-- Contact Info -->
     <div class="text-sm text-[var(--green-lily)] space-y-1 mb-6">
-  <p>1506 San Miguel Court</p>
-  <p>Midland, TX 79705</p>
-  <p>Phone: (432) 416-4556</p>
+      <p>1506 San Miguel Court</p>
+      <p>Midland, TX 79705</p>
+      <p>Phone: (432) 416-4556</p>
 
-  <p class="mt-3 font-semibold">Center Hours</p>
-  <p>6am until 9pm</p>
+      <p class="mt-3 font-semibold">Center Hours</p>
+      <p>6am until 9pm</p>
 
-  <p class="mt-3">EpitomeEducation.org</p>
-</div>
-
+      <p class="mt-3">EpitomeEducation.org</p>
+    </div>
 
     <!-- Links -->
     <div class="space-y-3">
-      <button onclick="openModal('admissionsModal')" class="underline text-[var(--teal-ocean)]">
+      <a href="mailto:Admission@EpitomeEducation.org" class="btn-gold">
         Admissions Inquiries
-      </button>
+      </a>
       <br />
-      <button onclick="openModal('directorModal')" class="underline text-[var(--teal-ocean)]">
+      <a href="mailto:JenniferRae@EpitomeEducation.org" class="btn-gold">
         Email the Director
-      </button>
+      </a>
     </div>
 
   </div>
 </main>
 
-<!-- Admissions Modal -->
-<div id="admissionsModal" class="modal-bg">
-  <div class="modal-box">
-    <button onclick="closeModal('admissionsModal')" class="absolute top-3 right-4 text-xl">×</button>
-    <h2 class="accent text-xl mb-4">Admissions Inquiries</h2>
-    <a
-      href="mailto:Admission@EpitomeEducation.org"
-      class="text-[var(--teal-ocean)] underline"
-    >
-      Send email to Admission@EpitomeEducation.org
-    </a>
-  </div>
-</div>
-
-<!-- Director Modal -->
-<div id="directorModal" class="modal-bg">
-  <div class="modal-box">
-    <button onclick="closeModal('directorModal')" class="absolute top-3 right-4 text-xl">×</button>
-    <h2 class="accent text-xl mb-4">Email the Director</h2>
-    <a
-      href="mailto:JenniferRae@EpitomeEducation.org"
-      class="text-[var(--teal-ocean)] underline"
-    >
-      Send email to JenniferRae@EpitomeEducation.org
-    </a>
-  </div>
-</div>
-
 <script>
-  function openModal(id) {
-    document.getElementById(id).style.display = 'flex';
-  }
-  function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
-  }
+  // Mobile menu toggle
+  document.getElementById('mobileBtn').onclick = () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  };
+
+  // Highlight current nav link (desktop + mobile)
+  const currentPath = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    if(link.getAttribute('href') === currentPath) {
+      link.classList.add('nav-active');
+    }
+  });
 </script>
 
 </body>
 </html>
+
 
