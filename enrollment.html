@@ -212,6 +212,44 @@
     </div>
   </div>
 
+  <!-- Tuition / Fee Section -->
+<h3 class="accent text-2xl mt-12 mb-4">Tuition & Fees</h3>
+<p class="mb-4">
+  View your detailed tuition chart below.
+</p>
+
+<!-- Button to open modal -->
+<button onclick="openTuitionModal()" 
+        class="mt-4 px-6 py-3 rounded-lg btn-gold font-semibold shadow hover:scale-[1.02] transition">
+  View Tuition Chart
+</button>
+
+<!-- Tuition Modal -->
+<div id="tuitionModal" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
+  <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
+    
+    <!-- Close button -->
+    <button onclick="closeTuitionModal()" 
+            class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">×</button>
+
+    <h2 class="accent text-2xl mb-4 text-teal-ocean">Tuition & Fees</h2>
+
+    <!-- PDF iframe -->
+    <iframe
+      src="https://drive.google.com/file/d/1GAru3ygLQE4ZTngJQyVE7oobd_3MUG87/preview"
+      class="w-full h-[600px] rounded border border-teal-ocean">
+    </iframe>
+
+    <!-- Download button -->
+    <a href="https://drive.google.com/uc?export=download&id=1GAru3ygLQE4ZTngJQyVE7oobd_3MUG87"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="mt-4 inline-block px-6 py-3 btn-gold rounded-lg font-semibold shadow hover:scale-[1.02] transition">
+      Download PDF
+    </a>
+  </div>
+</div>
+
   <!-- Signature Section -->
   <h3 class="accent text-2xl mt-12 mb-4">Digital Waiver & Emergency Release</h3>
 
