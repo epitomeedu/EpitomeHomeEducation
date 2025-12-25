@@ -41,19 +41,42 @@
 
     .hero-overlay { background: rgba(0,0,0,0.45); position:absolute; inset:0; }
     .hero-content { position:relative; z-index:10; color:white; }
- /* NAV GOLD HOVER + ACTIVE */
-.nav-link {
-  color: var(--teal-ocean);
-}
+ 
+    /* NAV GOLD HOVER + ACTIVE */
+    .nav-link {
+      color: var(--teal-ocean);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s all;
+    }
 
-.nav-link:hover {
-  color: var(--gold-honey);
-}
+    .nav-link:hover {
+      color: var(--gold-honey);
+      text-shadow: 0 0 8px var(--gold-honey);
+    }
 
-.nav-link.active {
-  color: var(--gold-honey);
-  border-bottom: 2px solid var(--gold-honey);
-}
+    .nav-active {
+      color: var(--gold-honey) !important;
+      font-weight: 400;
+      text-shadow: 0 0 8px var(--gold-honey);
+    }
+
+    /* BUTTONS GOLD GLOW */
+    .btn-gold {
+      background: var(--gold-honey);
+      color: var(--teal-ocean);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 400;
+      display: inline-block;
+      transition: 0.3s all;
+      text-decoration: none;
+    }
+
+    .btn-gold:hover {
+      box-shadow: 0 0 15px var(--gold-honey);
+      transform: translateY(-2px);
+    }
 
   </style>
 </head>
