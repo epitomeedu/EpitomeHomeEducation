@@ -58,10 +58,16 @@
 
     /* Modal */
     .modal-bg {
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
-      display: none;
-    }
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  display: none;              /* 🔒 LOCKED */
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
     .modal-box {
       animation: fadeIn .3s ease-out;
       border: 3px solid var(--gold-honey);
