@@ -126,6 +126,20 @@
 <a href="enrollment.html" class="nav-link">Admissions</a>
 <a href="contact.html" class="nav-link">Contact</a>
 
+      <script>
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Get current file name, default to 'index.html' if empty
+let currentPage = window.location.pathname.split('/').pop();
+if(currentPage === '') currentPage = 'index.html';
+
+navLinks.forEach(link => {
+  const href = link.getAttribute('href');
+  if (href === currentPage) {
+    link.classList.add('nav-active');
+  }
+});
+</script>
       
     </div>
   </div>
@@ -299,20 +313,6 @@
   </div>
 </footer>
 
-<script>
-const navLinks = document.querySelectorAll('.nav-link');
-
-// Get current file name, default to 'index.html' if empty
-let currentPage = window.location.pathname.split('/').pop();
-if(currentPage === '') currentPage = 'index.html';
-
-navLinks.forEach(link => {
-  const href = link.getAttribute('href');
-  if (href === currentPage) {
-    link.classList.add('nav-active');
-  }
-});
-</script>
   
 </body>
 </html>
