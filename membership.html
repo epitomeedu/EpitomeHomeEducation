@@ -55,12 +55,6 @@
       text-shadow: 0 0 8px var(--gold-honey);
     }
 
-    .nav-active {
-      color: var(--gold-honey) !important;
-      font-weight: 400;
-      text-shadow: 0 0 8px var(--gold-honey);
-    }
-
     /* BUTTONS GOLD GLOW */
     .btn-gold {
       background: var(--gold-honey);
@@ -99,22 +93,6 @@
     
   </style>
 </head>
-  
-<script>
-const navLinks = document.querySelectorAll('.nav-link');
-
-// Get current file name, default to 'index.html' if empty
-let currentPage = window.location.pathname.split('/').pop();
-if(currentPage === '') currentPage = 'index.html';
-
-navLinks.forEach(link => {
-  const href = link.getAttribute('href');
-  if (href === currentPage) {
-    link.classList.add('nav-active');
-  }
-});
-</script>
-
 
 <body>
 
@@ -321,6 +299,21 @@ navLinks.forEach(link => {
   </div>
 </footer>
 
+<script>
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Get current file name, default to 'index.html' if empty
+let currentPage = window.location.pathname.split('/').pop();
+if(currentPage === '') currentPage = 'index.html';
+
+navLinks.forEach(link => {
+  const href = link.getAttribute('href');
+  if (href === currentPage) {
+    link.classList.add('nav-active');
+  }
+});
+</script>
+  
 </body>
 </html>
 
