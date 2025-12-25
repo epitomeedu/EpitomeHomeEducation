@@ -29,16 +29,16 @@
 
     /* HERO */
     .programs-hero {
-      background-image: url('https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/3ca42d03ef085cf5d5224e5dd7ac9a15e21a7122/2366.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      position: relative;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  background-image: url('https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/3ca42d03ef085cf5d5224e5dd7ac9a15e21a7122/2366.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
     .hero-overlay {
       position: absolute;
@@ -46,19 +46,34 @@
       background: rgba(0,0,0,0.45);
     }
 
+    /* Modal */
+    .modal-bg {
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      display: none;
+    }
+    .modal-box {
+      animation: fadeIn .3s ease-out;
+      border: 3px solid var(--gold-honey);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     /* NAV GOLD HOVER + ACTIVE */
-    .nav-link {
-      color: var(--teal-ocean);
-    }
+.nav-link {
+  color: var(--teal-ocean);
+}
 
-    .nav-link:hover {
-      color: var(--gold-honey);
-    }
+.nav-link:hover {
+  color: var(--gold-honey);
+}
 
-    .nav-link.active {
-      color: var(--gold-honey);
-      border-bottom: 2px solid var(--gold-honey);
-    }
+.nav-link.active {
+  color: var(--gold-honey);
+  border-bottom: 2px solid var(--gold-honey);
+}
+
   </style>
 </head>
 
@@ -76,7 +91,9 @@
       <a href="membership.html">Membership</a>
       <a href="meals.html">Meals & Nutrition</a>
       <a href="enrollment.html">Enrollment</a>
-      <a href="contact.html">Contact</a>
+      <a href="#contact">Contact</a>
+      <a href="https://square.link/u/L8TsrbYo"
+        class="btn-gold text-center rounded py-2 mt-2">Make a Payment</a>
     </nav>
 
     <button id="mobileBtn" class="md:hidden text-xl" style="color:var(--teal-ocean)">☰</button>
@@ -93,7 +110,9 @@
       <a href="index.html#handbook">Parent Handbook</a>
       <a href="index.html#schedules">Classroom Schedules</a>
       <a href="index.html#events">Events</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="https://square.link/u/L8TsrbYo" target="_blank"
+        class="mt-2 px-3 py-2 rounded-lg btn-gold text-center font-semibold">Make a Payment</a>
     </div>
   </div>
 </header>
@@ -137,11 +156,10 @@ document.getElementById("mobileBtn").onclick = function () {
           literacy foundations, nature studies, and early academics.
         </p>
 
-        <a href="#"
-          onclick="alert('Primary Classroom program details coming soon!');"
-          class="block px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition text-center">
+        <button onclick="openModal('modal36')"
+          class="btn-gold px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition">
           View Program Details
-        </a>
+        </button>
       </div>
     </div>
 
@@ -160,20 +178,19 @@ document.getElementById("mobileBtn").onclick = function () {
           hands-on science, and foundational research.
         </p>
 
-        <a href="#"
-          onclick="alert('Lower Elementary program details coming soon!');"
-          class="block px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition text-center">
+        <button onclick="openModal('modal710')"
+          class="btn-gold px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition">
           View Program Details
-        </a>
+        </button>
       </div>
     </div>
 
     <!-- PROGRAM 3: UPPER ELEMENTARY -->
     <div class="bg-white rounded-2xl shadow-xl border-t-4 border-gold-honey overflow-hidden">
       <img
-        src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/4b23446b5d2354afbef56d7d05cb93178a0b3b28/2314.jpg"
-        class="w-full h-64 object-cover"
-        alt="Upper Elementary Classroom">
+  src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/4b23446b5d2354afbef56d7d05cb93178a0b3b28/2314.jpg"
+  class="w-full h-64 object-cover"
+  alt="Upper Elementary Classroom">
 
       <div class="p-8">
         <h3 class="accent text-3xl mb-4 text-teal-ocean">Upper Elementary Classroom (Ages 11–13)</h3>
@@ -182,8 +199,8 @@ document.getElementById("mobileBtn").onclick = function () {
           A unique upper-elementary learning experience is coming soon.
         </p>
 
-        <a href="#"
-          onclick="alert('Upper Elementary program details coming soon!');"
+        <a href="#" 
+          onclick="alert('Upper Elementary Program details coming soon!');"
           class="block px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition text-center">
           Stay Tuned
         </a>
@@ -193,8 +210,46 @@ document.getElementById("mobileBtn").onclick = function () {
   </div>
 </section>
 
+<!-- MODALS (unchanged except names) -->
+
+<div id="modal36" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
+  <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
+    <button onclick="closeModal('modal36')"
+      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">×</button>
+
+    <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Primary Classroom (Ages 3–6)</h2>
+
+    <iframe
+      src="https://drive.google.com/file/d/1XcVMddcFXbipS8uLifdvvIfaM7WGPOHn/preview"
+      class="w-full h-[600px] rounded border border-teal-ocean"></iframe>
+  </div>
+</div>
+
+<div id="modal710" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
+  <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
+    <button onclick="closeModal('modal710')"
+      class="absolute top-3 right-3 text-xl font-bold text-teal-ocean hover:text-red-500">×</button>
+
+    <h2 class="accent text-2xl mb-4 text-teal-ocean">Program Details: Lower Elementary Classroom (Ages 7–10)</h2>
+
+    <iframe
+      src="https://drive.google.com/file/d/1dpfLIy58qCjrmV5MEYu2MQFoD1zRoT0K/preview"
+      class="w-full h-[600px] rounded border border-teal-ocean"></iframe>
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+</script>
+
 </body>
 </html>
+
 
 
 
