@@ -83,6 +83,18 @@
   color: var(--gold-honey);
 }
 
+.nav-link {
+  color: var(--teal-ocean);
+  text-decoration: none;
+  font-weight: 400; /* normal weight */
+  transition: 0.3s all;
+}
+
+.nav-link:hover {
+  color: var(--gold-honey);
+  text-shadow: 0 0 8px var(--gold-honey); /* the glow effect */
+}
+
   </style>
 </head>
 
@@ -97,12 +109,12 @@
     </a>
 
     <nav class="hidden md:flex items-center justify-center gap-6 text-sm accent">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html">Membership</a>
-      <a href="meals.html">Meals & Nutrition</a>
+      <a href="index.html"class="nav-link">Home</a>
+      <a href="programs.html"class="nav-link">Curriculum</a>
+      <a href="membership.html"class="nav-link">Membership</a>
+      <a href="meals.html"class="nav-link">Meals & Nutrition</a>
       <a href="enrollment.html" id="enrollNav" class="nav-active">Admissions</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html"class="nav-link">Contact</a>
       
     </nav>
 
@@ -115,12 +127,12 @@
   <!-- Mobile Menu -->
   <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
     <div class="p-4 flex flex-col space-y-2 mobile-nav">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html">Membership</a>
-      <a href="meals.html">Meals & Nutrition</a>
+      <a href="index.html"class="nav-link">Home</a>
+      <a href="programs.html"class="nav-link">Curriculum</a>
+      <a href="membership.html"class="nav-link">Membership</a>
+      <a href="meals.html"class="nav-link">Meals & Nutrition</a>
       <a href="enrollment.html" id="enrollNavMobile" class="nav-active">Admissions</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html"class="nav-link">Contact</a>
       
     </div>
   </div>
