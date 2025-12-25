@@ -80,6 +80,18 @@
 
   </style>
 </head>
+  
+<script>
+  const navLinks = document.querySelectorAll('.nav-link');
+  const currentPage = window.location.pathname.split('/').pop();
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+      link.classList.add('nav-active');
+    }
+  });
+</script>
 
 <body>
 
@@ -90,12 +102,13 @@
       src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg">
 
     <nav class="hidden md:flex items-center justify-center gap-6 text-sm accent">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html" class="text-[var(--gold-honey)]">Membership</a>
-      <a href="meals.html">Meals & Nutrition</a>
-      <a href="enrollment.html">Admissions</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" class="nav-link">Home</a>
+<a href="programs.html" class="nav-link">Curriculum</a>
+<a href="membership.html" class="nav-link">Membership</a>
+<a href="meals.html" class="nav-link">Meals & Nutrition</a>
+<a href="enrollment.html" class="nav-link">Admissions</a>
+<a href="contact.html" class="nav-link">Contact</a>
+
       
     </nav>
 
@@ -105,12 +118,13 @@
   <!-- MOBILE NAV -->
   <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
     <div class="p-4 flex flex-col space-y-2">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html">Membership</a>
-      <a href="meals.html">Meals & Nutrition</a>
-      <a href="enrollment.html">Admissions</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" class="nav-link">Home</a>
+<a href="programs.html" class="nav-link">Curriculum</a>
+<a href="membership.html" class="nav-link">Membership</a>
+<a href="meals.html" class="nav-link">Meals & Nutrition</a>
+<a href="enrollment.html" class="nav-link">Admissions</a>
+<a href="contact.html" class="nav-link">Contact</a>
+
       
     </div>
   </div>
