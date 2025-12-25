@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Epitome Education</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-lily:#66AC8D;
+      --gold-honey:#F5D66D;
+      --teal-ocean:#368678;
+    }
+
+    body {
+      font-family: 'Quattrocento', serif;
+      background: #fdfdfd;
+      color: var(--teal-ocean);
+    }
+
+    .accent {
+      font-family: 'Cinzel', serif;
+    }
+
+    .modal-bg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-box {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      max-width: 500px;
+      width: 100%;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="min-h-screen flex items-center justify-center px-6">
+  <div class="text-center max-w-xl">
+
+    <!-- Image -->
+    <img
+      src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/f563d2be0ab10c8b7ce77ebb784e345ac859d151/1989.jpg"
+      alt="Epitome Education"
+      class="mx-auto rounded-xl mb-6 max-w-xs"
+    />
+
+    <!-- Title -->
+    <div class="mb-6">
+      <p class="text-[var(--gold-honey)] text-2xl lowercase">epitome</p>
+      <p class="accent text-[var(--green-lily)] text-3xl">Home</p>
+      <p class="accent text-[var(--green-lily)] text-3xl">Education</p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="text-sm text-[var(--green-lily)] space-y-1 mb-6">
+      <p>1506 San Miguel Court</p>
+      <p>Midland, TX 79705</p>
+      <p>Phone: (432) 416-4556</p>
+      <p class="mt-2">EpitomeEducation.org</p>
+    </div>
+
+    <!-- Links -->
+    <div class="space-y-3">
+      <button onclick="openModal('admissionsModal')" class="underline text-[var(--teal-ocean)]">
+        Admissions Inquiries
+      </button>
+      <br />
+      <button onclick="openModal('directorModal')" class="underline text-[var(--teal-ocean)]">
+        Email the Director
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<!-- Admissions Modal -->
+<div id="admissionsModal" class="modal-bg">
+  <div class="modal-box">
+    <button onclick="closeModal('admissionsModal')" class="absolute top-3 right-4 text-xl">×</button>
+    <h2 class="accent text-xl mb-4">Admissions Inquiries</h2>
+    <a
+      href="mailto:Admission@EpitomeEducation.org"
+      class="text-[var(--teal-ocean)] underline"
+    >
+      Send email to Admission@EpitomeEducation.org
+    </a>
+  </div>
+</div>
+
+<!-- Director Modal -->
+<div id="directorModal" class="modal-bg">
+  <div class="modal-box">
+    <button onclick="closeModal('directorModal')" class="absolute top-3 right-4 text-xl">×</button>
+    <h2 class="accent text-xl mb-4">Email the Director</h2>
+    <a
+      href="mailto:JenniferRae@EpitomeEducation.org"
+      class="text-[var(--teal-ocean)] underline"
+    >
+      Send email to JenniferRae@EpitomeEducation.org
+    </a>
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
