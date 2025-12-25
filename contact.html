@@ -19,6 +19,43 @@
     }
 
     body {
+      <!-- HEADER / NAV -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-center gap-10 p-4">
+    <img class="logo-img h-20"
+      src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg"
+      alt="Epitome Education Logo">
+
+    <nav class="hidden md:flex items-center justify-center gap-6 text-sm accent">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="membership.html">Membership</a>
+      <a href="meals.html">Meals & Nutrition</a>
+      <a href="enrollment.html">Enrollment</a>
+      <a href="contact.html" class="text-[var(--gold-honey)]">Contact</a>
+    </nav>
+
+    <button id="mobileBtn" class="md:hidden text-xl" style="color:var(--teal-ocean)">☰</button>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
+    <div class="p-4 flex flex-col space-y-2 mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="membership.html">Membership</a>
+      <a href="meals.html">Meals & Nutrition</a>
+      <a href="enrollment.html">Enrollment</a>
+      <a href="contact.html" class="text-[var(--gold-honey)]">Contact</a>
+    </div>
+  </div>
+</header>
+
+<script>
+document.getElementById("mobileBtn").onclick = function () {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+};
+</script>
+
       font-family: 'Quattrocento', serif;
       background: #fdfdfd;
       color: var(--teal-ocean);
