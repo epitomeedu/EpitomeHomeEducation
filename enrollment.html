@@ -225,7 +225,7 @@
 </button>
 
 <!-- Tuition Modal -->
-<div id="tuitionModal" class="modal-bg fixed inset-0 flex items-center justify-center z-50">
+<div id="tuitionModal" class="modal-bg fixed inset-0 flex items-center justify-center z-50" style="display:none;">
   <div class="modal-box bg-white rounded-xl p-6 shadow-xl max-w-4xl w-full relative">
     
     <!-- Close button -->
@@ -249,6 +249,27 @@
     </a>
   </div>
 </div>
+
+<!-- Tuition Modal Script -->
+<script>
+  const tuitionModal = document.getElementById("tuitionModal");
+
+  function openTuitionModal(){ 
+    tuitionModal.style.display = "flex"; 
+  }
+
+  function closeTuitionModal(){ 
+    tuitionModal.style.display = "none"; 
+  }
+
+  // Close modal when clicking outside modal-box
+  tuitionModal.addEventListener("click", (e) => {
+    if(e.target === tuitionModal){
+      closeTuitionModal();
+    }
+  });
+</script>
+
 
   <!-- Signature Section -->
   <h3 class="accent text-2xl mt-12 mb-4">Digital Waiver & Emergency Release</h3>
