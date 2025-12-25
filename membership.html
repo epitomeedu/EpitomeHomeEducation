@@ -100,17 +100,21 @@
   </style>
 </head>
   
-  <script>
-  const navLinks = document.querySelectorAll('.nav-link');
-  const currentPage = window.location.pathname.split('/').pop();
+<script>
+const navLinks = document.querySelectorAll('.nav-link');
 
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage) {
-      link.classList.add('nav-active');
-    }
-  });
+// Get current file name, default to 'index.html' if empty
+let currentPage = window.location.pathname.split('/').pop();
+if(currentPage === '') currentPage = 'index.html';
+
+navLinks.forEach(link => {
+  const href = link.getAttribute('href');
+  if (href === currentPage) {
+    link.classList.add('nav-active');
+  }
+});
 </script>
+
 
 <body>
 
