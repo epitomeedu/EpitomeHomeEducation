@@ -104,12 +104,12 @@
 
 
     <nav class="hidden md:flex items-center justify-center gap-6 text-sm accent">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html">Membership</a>
-      <a href="meals.html" id="mealsNav">Meals &amp; Nutrition</a>
-      <a href="enrollment.html">Admissions</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="nav-link">Home</a>
+<a href="programs.html" class="nav-link">Curriculum</a>
+<a href="membership.html" class="nav-link">Membership</a>
+<a href="meals.html" class="nav-link">Meals & Nutrition</a>
+<a href="enrollment.html" class="nav-link">Admissions</a>
+<a href="contact.html" class="nav-link">Contact</a>
       
     </nav>
 
@@ -120,12 +120,12 @@
 
   <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
     <div class="p-4 flex flex-col space-y-2 mobile-nav">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html">Membership</a>
-      <a href="meals.html" id="mealsNavMobile">Meals &amp; Nutrition</a>
-      <a href="enrollment.html">Admissions</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="nav-link">Home</a>
+<a href="programs.html" class="nav-link">Curriculum</a>
+<a href="membership.html" class="nav-link">Membership</a>
+<a href="meals.html" class="nav-link">Meals & Nutrition</a>
+<a href="enrollment.html" class="nav-link">Admissions</a>
+<a href="contact.html" class="nav-link">Contact</a>
       
     </div>
   </div>
@@ -147,6 +147,26 @@
       if(m) m.classList.add('nav-active');
     }
   })();
+</script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobileBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+  // Highlight current page in nav
+  const navLinks = document.querySelectorAll('.nav-link');
+  let currentPage = window.location.pathname.split('/').pop();
+  if (currentPage === '') currentPage = 'index.html';
+
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('nav-active');
+    }
+  });
+});
 </script>
 
 <!-- HERO -->
