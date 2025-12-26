@@ -128,17 +128,11 @@ body{
 </div>
 
 <script>
-document.getElementById("mobileBtn").onclick = function () {
-  document.getElementById("mobileMenu").classList.toggle("hidden");
-};
+  document.getElementById("mobileBtn")?.addEventListener("click", () => {
+    document.getElementById("mobileMenu")?.classList.toggle("hidden");
+  });
 </script>
 
-</header>
-
-<script>
-document.getElementById("mobileBtn").onclick = () =>
-  document.getElementById("mobileMenu").classList.toggle("hidden");
-</script>
 
 
 <!-- HERO SECTION -->
