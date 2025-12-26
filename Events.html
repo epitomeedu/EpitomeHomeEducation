@@ -75,19 +75,26 @@ body{
   cursor:pointer;
   color:var(--teal-ocean);
 }
-  /* NAV GOLD HOVER + ACTIVE */
+  /* NAV BASE */
 .nav-link {
   color: var(--teal-ocean);
+  transition: color 0.25s ease;
+  text-decoration: none;
 }
 
+/* HOVER = gold */
 .nav-link:hover {
   color: var(--gold-honey);
 }
 
-.nav-link.active {
+/* ACTIVE = same as hover, but persistent */
+.nav-link.active,
+.nav-link.nav-active {
   color: var(--gold-honey);
-  border-bottom: 2px solid var(--gold-honey);
+  text-decoration: none;
+  border: none;
 }
+
 
 </style>
 </head>
