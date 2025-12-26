@@ -103,28 +103,36 @@ body{
         alt="Epitome Education Logo">
     </a>
 
-    <nav class="hidden md:flex items-center space-x-6 text-sm accent">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html">Membership</a>
-      <a href="meals.html">Meals & Nutrition</a>
-      <a href="enrollment.html">Admissions</a>
+   <!-- NAVIGATION -->
+<nav class="hidden md:flex items-center justify-center gap-6 text-sm accent">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="programs.html" class="nav-link">Curriculum</a>
+  <a href="membership.html" class="nav-link">Membership</a>
+  <a href="meals.html" class="nav-link">Meals & Nutrition</a>
+  <a href="enrollment.html" class="nav-link">Admissions</a>
+  <a href="events.html" class="nav-link nav-active">Events</a>
+  <a href="contact.html" class="nav-link">Contact</a>
+</nav>
 
-    </nav>
-
-    <button id="mobileBtn" class="md:hidden text-2xl" style="color:var(--teal-ocean)">☰</button>
+<!-- MOBILE NAV -->
+<div id="mobileMenu" class="hidden md:hidden border-t bg-white">
+  <div class="p-4 flex flex-col space-y-2 mobile-nav">
+    <a href="index.html#home" class="nav-link">Home</a>
+    <a href="programs.html" class="nav-link">Curriculum</a>
+    <a href="membership.html" class="nav-link">Membership</a>
+    <a href="meals.html" class="nav-link">Meals & Nutrition</a>
+    <a href="enrollment.html" class="nav-link">Admissions</a>
+    <a href="events.html" class="nav-link nav-active">Events</a>
+    <a href="contact.html" class="nav-link">Contact</a>
   </div>
+</div>
 
-  <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
-    <div class="p-4 flex flex-col space-y-2 text-center">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Curriculum</a>
-      <a href="membership.html">Membership</a>
-      <a href="meals.html">Meals & Nutrition</a>
-      <a href="enrollment.html">Admissions</a>
-      
-    </div>
-  </div>
+<script>
+document.getElementById("mobileBtn").onclick = function () {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+};
+</script>
+
 </header>
 
 <script>
