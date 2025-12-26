@@ -321,20 +321,23 @@
 
   <!-- ENROLLMENT PAGE SECTION -->
 <section id="enroll" class="max-w-6xl mx-auto py-16 px-4">
-  <h2 class="text-3xl font-bold accent text-teal-ocean mb-6 text-center">
-    Enrollment Information
+
+  <!-- Section Title -->
+  <h2 class="accent text-3xl mb-6 text-center"
+      style="color: var(--gold-honey); font-weight: 400;">
+    Enrollment & Curriculum
   </h2>
 
   <p class="text-lg text-center mb-10 max-w-3xl mx-auto">
     Thank you for choosing Epitome Education. Below you’ll find a brief admissions overview,
-    please see our <a href="enrollment.html" class="text-gold-honey underline hover:text-gold-honey">Admissions</a> page for more detailed information. 
-    Please refer to our <a href="programs.html" class="text-gold-honey underline hover:text-gold-honey">Curriculum</a> page for more detailed information about our programs. 
+    please see our <a href="enrollment.html" class="underline">Admissions</a> page for more detailed information. 
+    Please refer to our <a href="programs.html" class="underline">Curriculum</a> page for more detailed information about our programs.
   </p>
 
-  <!-- 3 cards -->
+  <!-- Cards -->
   <div class="grid md:grid-cols-3 gap-6">
 
-    <!-- PROGRAM 1: Requirements -->
+    <!-- Card 1: Requirements (UNCHANGED CONTENT) -->
     <div class="bg-white rounded-lg shadow p-6">
       <h3 class="text-xl font-semibold mb-3 accent text-teal-ocean">Requirements</h3>
       <ul class="list-disc ml-5 space-y-2 text-[var(--teal-ocean)]">
@@ -347,7 +350,7 @@
       </ul>
     </div>
 
-    <!-- PROGRAM 2: Steps -->
+    <!-- Card 2: How to Enroll (UNCHANGED CONTENT) -->
     <div class="bg-white rounded-lg shadow p-6">
       <h3 class="text-xl font-semibold mb-3 accent text-teal-ocean">How to Enroll</h3>
       <ol class="list-decimal ml-5 space-y-2 text-[var(--teal-ocean)]">
@@ -359,32 +362,26 @@
       </ol>
     </div>
 
-   <!-- PROGRAM 3: CURRICULUM -->
-<div class="bg-white rounded-2xl shadow-xl border-t-4 border-gold-honey overflow-hidden">
-  <div class="p-8">
-    <h3 class="accent text-3xl mb-4 text-[var(--gold-honey)] font-normal">Curriculum</h3>
+    <!-- Card 3: Curriculum -->
+    <div class="bg-white rounded-lg shadow p-6 flex flex-col gap-3">
+      <h3 class="text-xl font-semibold mb-2 accent text-teal-ocean">Curriculum</h3>
 
-    <p class="mb-6 leading-relaxed text-teal-ocean">
-      Explore our curriculum by grade level.
-    </p>
-
-    <div class="flex flex-col gap-4">
-      <a href="programs.html#primary" 
-         class="block px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition text-left">
+      <a href="programs.html#primary"
+         class="inline-block text-sm text-white btn-gold px-4 py-2 rounded text-left">
         Primary Classroom
       </a>
 
-      <a href="programs.html#lower-elementary" 
-         class="block px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition text-left">
+      <a href="programs.html#lower-elementary"
+         class="inline-block text-sm text-white btn-gold px-4 py-2 rounded text-left">
         Lower Elementary
       </a>
 
-      <a href="#" 
-         onclick="alert('Upper Elementary Program details coming soon!');" 
-         class="block px-6 py-3 rounded-lg font-semibold shadow bg-[var(--gold-honey)] text-teal-ocean hover:bg-yellow-400 transition text-left">
-        Upper Elementary
+      <a href="#"
+         onclick="alert('Upper Elementary curriculum details coming soon!'); return false;"
+         class="inline-block text-sm text-white btn-gold px-4 py-2 rounded text-left">
+        Upper Elementary (Stay Tuned)
       </a>
-</div>
+    </div>
 
   </div>
 </section>
