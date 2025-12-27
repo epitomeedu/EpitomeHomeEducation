@@ -314,72 +314,10 @@
           class="inline-block text-sm text-white btn-gold px-4 py-2 rounded mt-3 hover:opacity-90 transition">
     Waiver & Registration
   </button>
-</div>
 
-</div>
-    
-<!-- ===== MODALS ===== -->
-<!-- Waiver PDF Modal -->
-<div id="waiverPdfModal" class="modalBG" style="display:none; justify-content:center; align-items:center;">
-  <div class="modalBox">
-    <span class="closeBtn" onclick="closeModal('waiverPdfModal')">✖</span>
-    <h2 class="accent text-2xl mb-4">Registration & Waiver</h2>
 
-    <iframe src="https://drive.google.com/file/d/1vim8fnXGIcAWv8oJ0w8tjuewmybbGsSV/preview"
-            class="w-full h-[70vh] border mb-4 rounded"></iframe>
-
-    <button onclick="closeModal('waiverPdfModal'); openModal('waiverFormModal');"
-            class="btn-gold px-6 py-3 rounded-lg font-semibold w-full hover:opacity-90 transition">
-      Continue to Registration Form
-    </button>
   </div>
 </div>
-
-<!-- Registration Form Modal -->
-<div id="waiverFormModal" class="modalBG" style="display:none; justify-content:center; align-items:center;">
-  <div class="modalBox">
-    <span class="closeBtn" onclick="closeModal('waiverFormModal')">✖</span>
-    <h2 class="accent text-2xl mb-4">Event Registration Form</h2>
-
-    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-      <input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
-      <input type="hidden" name="redirect" value="thankyou.html">
-
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="text" name="first_name" placeholder="First Name" class="border p-2 w-full rounded" required>
-        <input type="text" name="last_name" placeholder="Last Name" class="border p-2 w-full rounded" required>
-      </div>
-
-      <input type="date" name="dob" class="border p-2 w-full rounded" required>
-      <input type="text" name="address" placeholder="Address" class="border p-2 w-full rounded" required>
-      <input type="email" name="email" placeholder="Email Address" class="border p-2 w-full rounded" required>
-      <input type="tel" name="phone" placeholder="Phone Number" class="border p-2 w-full rounded" required>
-
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="text" name="emergency_name" placeholder="Emergency Contact Name" class="border p-2 w-full rounded" required>
-        <input type="tel" name="emergency_phone" placeholder="Emergency Contact Phone" class="border p-2 w-full rounded" required>
-      </div>
-
-      <label class="block font-semibold mt-4">Signature (type full name)</label>
-      <input type="text" name="signature" class="border p-2 w-full rounded" required>
-
-      <button class="btn-gold px-6 py-3 rounded-lg font-semibold w-full mt-4 hover:opacity-90 transition">
-        Submit Registration
-      </button>
-    </form>
-  </div>
-</div>
-
-    <script>
-function openModal(id){ 
-  document.getElementById(id).style.display = "flex"; 
-}
-function closeModal(id){ 
-  document.getElementById(id).style.display = "none"; 
-}
-</script>
-
-
 
 </section>
 
