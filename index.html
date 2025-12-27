@@ -301,108 +301,137 @@
       </button>
 
       <!-- Registration Form Modal -->
-      <div id="regModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
-        <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 p-6 relative overflow-y-auto max-h-[90vh]">
-          <button id="closeRegModal" class="absolute top-2 right-2 text-xl font-bold text-teal-400">✖</button>
-          <h2 class="text-xl font-semibold text-teal-600 mb-3">Registration & Waiver Form</h2>
+<div id="registrationModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
+  <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 p-6 relative">
+    <!-- Close Button -->
+    <button id="closeRegistrationModal" class="absolute top-2 right-2 text-xl font-bold text-teal-400">✖</button>
+    
+    <h2 class="text-xl font-semibold text-teal-600 mb-4">Registration & Waiver Form</h2>
+    
+    <form id="registrationForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+      <input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
+      <input type="hidden" name="subject" value="New Registration Submission">
+      <input type="hidden" name="from_name" value="Epitome Education Website">
+      <input type="hidden" name="redirect" value="thankyou.html">
+      <input type="hidden" name="submission_date" id="submission_date" value="">
+      
+      <div>
+        <label class="font-semibold">Date</label>
+        <input type="text" name="today_date" id="today_date" readonly class="w-full border rounded px-3 py-2 bg-gray-100">
+      </div>
+      
+      <div>
+        <label class="font-semibold">Parent / Guardian Name</label>
+        <input type="text" name="parent_name" required class="w-full border rounded px-3 py-2">
+      </div>
 
-          <div class="mb-4">
-            <label class="font-semibold">Waiver Document</label>
-            <iframe src="https://drive.google.com/file/d/1vim8fnXGIcAWv8oJ0w8tjuewmybbGsSV/preview" class="w-full h-[300px] border rounded"></iframe>
-          </div>
+      <div>
+        <label class="font-semibold">Phone Number</label>
+        <input type="tel" name="phone" required class="w-full border rounded px-3 py-2">
+      </div>
 
-          <!-- Web3Form Registration Form -->
-          <form id="registrationForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-            <input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
-            <input type="hidden" name="subject" value="New Registration Submission">
-            <input type="hidden" name="from_name" value="Epitome Education Website">
-            <input type="hidden" name="redirect" value="thankyou.html">
-            <input type="hidden" name="submission_date" value="">
+      <div>
+        <label class="font-semibold">Email</label>
+        <input type="email" name="email" required class="w-full border rounded px-3 py-2">
+      </div>
 
-            <div>
-              <label class="font-semibold">Parent / Guardian Name</label>
-              <input type="text" name="parent_name" required class="w-full border rounded px-3 py-2">
-            </div>
-            <div>
-              <label class="font-semibold">Email</label>
-              <input type="email" name="email" required class="w-full border rounded px-3 py-2">
-            </div>
+      <div>
+        <label class="font-semibold">Address</label>
+        <input type="text" name="address" required class="w-full border rounded px-3 py-2">
+      </div>
 
-            <div>
-              <label class="font-semibold">Child Name</label>
-              <input type="text" name="child_name" required class="w-full border rounded px-3 py-2">
-            </div>
-            <div>
-              <label class="font-semibold">Child Date of Birth</label>
-              <input type="date" name="child_dob" required class="w-full border rounded px-3 py-2">
-            </div>
-
-            <!-- Signature Pad -->
-            <div>
-              <label class="font-semibold">Digital Signature</label>
-              <canvas id="regSignature" class="border w-full h-40 rounded bg-white"></canvas>
-              <button type="button" onclick="clearRegSignature()" class="mt-2 text-sm underline text-red-500">
-                Clear Signature
-              </button>
-              <input type="hidden" name="signature_data" id="reg_signature_data">
-            </div>
-
-            <div>
-              <label class="flex items-start gap-3">
-                <input type="checkbox" name="enrollment_application_completed" value="Yes" required class="mt-1 accent-[var(--gold-honey)]">
-                <span class="text-sm">I confirm that I have completed and reviewed the <strong>Enrollment Application</strong>.</span>
-              </label>
-            </div>
-
-            <button type="submit" onclick="saveRegSignature()" class="px-6 py-3 btn-gold rounded-lg font-semibold shadow">
-              Submit Registration
-            </button>
-          </form>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+        <div>
+          <label class="font-semibold">City</label>
+          <input type="text" name="city" required class="w-full border rounded px-3 py-2">
+        </div>
+        <div>
+          <label class="font-semibold">State</label>
+          <input type="text" name="state" required class="w-full border rounded px-3 py-2">
+        </div>
+        <div>
+          <label class="font-semibold">ZIP</label>
+          <input type="text" name="zip" required class="w-full border rounded px-3 py-2">
         </div>
       </div>
 
-      <script>
-        const openRegModal = document.getElementById('openRegModal');
-        const closeRegModal = document.getElementById('closeRegModal');
-        const regModal = document.getElementById('regModal');
+      <div>
+        <label class="font-semibold">Child Name</label>
+        <input type="text" name="child_name" required class="w-full border rounded px-3 py-2">
+      </div>
 
-        openRegModal.addEventListener('click', () => {
-          regModal.classList.remove('hidden');
-          regModal.classList.add('flex');
-        });
+      <div>
+        <label class="font-semibold">Child Date of Birth</label>
+        <input type="date" name="child_dob" required class="w-full border rounded px-3 py-2">
+      </div>
 
-        closeRegModal.addEventListener('click', () => {
-          regModal.classList.add('hidden');
-          regModal.classList.remove('flex');
-        });
+      <!-- Signature Canvas -->
+      <div>
+        <label class="font-semibold">Digital Signature</label>
+        <canvas id="registrationSignature" class="border w-full h-40 rounded bg-white"></canvas>
+        <button type="button" onclick="clearRegistrationSignature()" class="mt-2 text-sm underline text-red-500">Clear Signature</button>
+        <input type="hidden" name="signature_data" id="registration_signature_data">
+      </div>
 
-        regModal.addEventListener('click', (e) => {
-          if(e.target === regModal){
-            regModal.classList.add('hidden');
-            regModal.classList.remove('flex');
-          }
-        });
+      <div class="mt-4">
+        <label class="flex items-start gap-3">
+          <input type="checkbox" name="application_confirmed" value="Yes" required class="mt-1 accent-[var(--gold-honey)]">
+          <span class="text-sm">I confirm that I have submitted the enrollment application via email.</span>
+        </label>
+      </div>
 
-        // Signature pad
-        const regCanvas = document.getElementById("regSignature");
-        const regSignaturePad = new SignaturePad(regCanvas);
+      <button type="submit" onclick="saveRegistrationSignature()" class="mt-4 px-4 py-2 rounded text-white btn-gold">
+        Submit Registration
+      </button>
+    </form>
+  </div>
+</div>
 
-        function clearRegSignature() {
-          regSignaturePad.clear();
-        }
+<!-- Modal Script -->
+<script>
+  const openRegistrationModalBtn = document.getElementById('openAppModal'); // replace with your button ID
+  const registrationModal = document.getElementById('registrationModal');
+  const closeRegistrationModalBtn = document.getElementById('closeRegistrationModal');
 
-        function saveRegSignature() {
-          if (!regSignaturePad.isEmpty()) {
-            document.getElementById("reg_signature_data").value = regSignaturePad.toDataURL();
-          }
-        }
+  openRegistrationModalBtn.addEventListener('click', () => {
+    registrationModal.classList.remove('hidden');
+    registrationModal.classList.add('flex');
+    
+    // Fill today's date automatically
+    document.getElementById('today_date').value = new Date().toLocaleDateString();
+  });
 
-        // Add submission date before submitting
-        document.getElementById("registrationForm").addEventListener("submit", () => {
-          saveRegSignature();
-          document.querySelector('input[name="submission_date"]').value = new Date().toLocaleString();
-        });
-      </script>
+  closeRegistrationModalBtn.addEventListener('click', () => {
+    registrationModal.classList.add('hidden');
+    registrationModal.classList.remove('flex');
+  });
+
+  registrationModal.addEventListener('click', (e) => {
+    if(e.target === registrationModal){
+      registrationModal.classList.add('hidden');
+      registrationModal.classList.remove('flex');
+    }
+  });
+
+  // Signature Pad
+  const registrationCanvas = document.getElementById("registrationSignature");
+  const registrationSignaturePad = new SignaturePad(registrationCanvas);
+
+  function clearRegistrationSignature(){
+    registrationSignaturePad.clear();
+  }
+
+  function saveRegistrationSignature(){
+    if(!registrationSignaturePad.isEmpty()){
+      document.getElementById("registration_signature_data").value = registrationSignaturePad.toDataURL();
+    }
+    // Update submission date
+    document.getElementById('submission_date').value = new Date().toLocaleString();
+  }
+
+  document.getElementById('registrationForm').addEventListener('submit', saveRegistrationSignature);
+</script>
+
     </div>
   </div>
 </section>
