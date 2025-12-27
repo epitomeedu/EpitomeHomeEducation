@@ -8,7 +8,7 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -27,23 +27,64 @@
 
     .accent { font-family: 'Cinzel', serif; }
 
-    /* expandable content */
-    .expand {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: all 0.9s ease;
-    }
+    .nav-link { color: var(--teal-ocean); }
+    .nav-link:hover { color: var(--gold-honey); }
+    .nav-link.nav-active { color: var(--gold-honey) !important; text-decoration: none; }
 
-    .expand.open {
-      max-height: 1200px;
-      opacity: 1;
-      margin-top: 1rem;
+    .btn-gold {
+      background-color: var(--gold-honey);
+      color: var(--teal-ocean);
+      font-weight: 600;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      transition: background 0.3s;
+    }
+    .btn-gold:hover {
+      background-color: #FCE788;
     }
   </style>
 </head>
 
 <body>
+
+<!-- NAVIGATION -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-center gap-10 p-4">
+    <img class="logo-img h-20"
+      src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/70d38ae6e4b48421f1f7bd0a4cc99ddaf7310a62/Screenshot_20251031_143717_Canva(1).jpg"
+      alt="Epitome Logo">
+
+    <nav class="hidden md:flex items-center justify-center gap-6 text-sm accent">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="programs.html" class="nav-link">Curriculum</a>
+      <a href="about.html" class="nav-link nav-active">About</a>
+      <a href="membership.html" class="nav-link">Membership</a>
+      <a href="meals.html" class="nav-link">Meals & Nutrition</a>
+      <a href="enrollment.html" class="nav-link">Admissions</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <button id="mobileBtn" class="md:hidden text-xl" style="color:var(--teal-ocean)">☰</button>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden border-t bg-white">
+    <div class="p-4 flex flex-col space-y-2 mobile-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="programs.html" class="nav-link">Curriculum</a>
+      <a href="about.html" class="nav-link nav-active">About</a>
+      <a href="membership.html" class="nav-link">Membership</a>
+      <a href="meals.html" class="nav-link">Meals & Nutrition</a>
+      <a href="enrollment.html" class="nav-link">Admissions</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.getElementById("mobileBtn").onclick = function () {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  };
+</script>
 
 <!-- PAGE HEADER -->
 <section class="max-w-7xl mx-auto px-6 py-20">
