@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About • Epitome Education</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-lily:#66AC8D;
+      --gold-honey:#F5D66D;
+      --teal-ocean:#368678;
+      --table-shade:#B6DAD1;
+    }
+
+    body {
+      font-family: 'Quattrocento', serif;
+      color: var(--teal-ocean);
+      background: #fdfdfd;
+    }
+
+    .accent { font-family: 'Cinzel', serif; }
+
+    /* expandable content */
+    .expand {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 0.9s ease;
+    }
+
+    .expand.open {
+      max-height: 1200px;
+      opacity: 1;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- PAGE HEADER -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+  <h1 class="accent text-5xl text-center mb-16 text-teal-ocean">
+    About Epitome Education
+  </h1>
+
+  <!-- CARD GRID -->
+  <div class="grid md:grid-cols-3 gap-12">
+
+    <!-- CARD 1: FOUNDER -->
+    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[var(--gold-honey)] overflow-hidden">
+      <img
+        src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/2acac4ac7697105ed2544c6219852f1b4c61b567/FB_IMG_1766789870333.jpg"
+        class="w-full h-72 object-cover"
+        alt="Founder of Epitome Education">
+
+      <div class="p-8">
+        <h3 class="accent text-3xl mb-4 text-teal-ocean">
+          About Our Founder
+        </h3>
+
+        <p class="leading-relaxed mb-4">
+          I’m a single mom, entrepreneur, and educator at heart who believes deeply in the power of
+          small, intentional learning communities. Originally from New York, my journey brought me
+          to West Texas with one clear goal: to create a better, more balanced life for my child
+          while building something meaningful for others.
+        </p>
+
+        <div id="founderMore" class="expand leading-relaxed space-y-4">
+          <p>
+            After years as a chef and bakery owner, I learned firsthand the value of creativity,
+            discipline, and learning by doing. As a military widow and an expat who has lived and
+            worked across cultures, I’ve seen how essential stability, compassion, and strong
+            support systems are—especially for children.
+          </p>
+
+          <p>
+            When rising costs and limited childcare made it clear that staying in New York was no
+            longer sustainable, I chose to start fresh somewhere that allowed room to grow, breathe,
+            and build community.
+          </p>
+
+          <p>
+            Epitome Education was born from that vision—a place where children are known, supported,
+            and encouraged to learn with purpose and confidence.
+          </p>
+        </div>
+
+        <button onclick="toggleExpand('founderMore')"
+          class="mt-6 px-6 py-3 rounded-lg font-semibold shadow
+                 bg-[var(--gold-honey)] text-[var(--teal-ocean)]
+                 hover:bg-yellow-400 transition">
+          Read More
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 2: MICRO-SCHOOL -->
+    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[var(--gold-honey)] overflow-hidden">
+      <img
+        src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/2acac4ac7697105ed2544c6219852f1b4c61b567/2312.jpg"
+        class="w-full h-72 object-cover"
+        alt="Epitome Micro-School">
+
+      <div class="p-8">
+        <h3 class="accent text-3xl mb-4 text-teal-ocean">
+          About Our Micro-School
+        </h3>
+
+        <p class="leading-relaxed mb-4">
+          Epitome Education is a thoughtfully designed micro-school focused on small class sizes,
+          meaningful relationships, and individualized learning experiences.
+        </p>
+
+        <div id="schoolMore" class="expand leading-relaxed space-y-4">
+          <p>
+            Placeholder text: Describe your educational philosophy, daily rhythm, and how your
+            school supports both students and families.
+          </p>
+          <p>
+            Placeholder text: Emphasize enrichment, structure, flexibility, and community values.
+          </p>
+        </div>
+
+        <button onclick="toggleExpand('schoolMore')"
+          class="mt-6 px-6 py-3 rounded-lg font-semibold shadow
+                 bg-[var(--gold-honey)] text-[var(--teal-ocean)]
+                 hover:bg-yellow-400 transition">
+          Read More
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD 3: COMMUNITY / VISION -->
+    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[var(--gold-honey)] overflow-hidden">
+      <img
+        src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/0fe9b6b5b8bd0830c495d680bea96c941b09fb03/FB_IMG_1766789537820.jpg"
+        class="w-full h-72 object-cover"
+        alt="Epitome Community">
+
+      <div class="p-8">
+        <h3 class="accent text-3xl mb-4 text-teal-ocean">
+          Our Vision & Community
+        </h3>
+
+        <p class="leading-relaxed mb-4">
+          At Epitome Education, community is at the heart of everything we do.
+        </p>
+
+        <div id="visionMore" class="expand leading-relaxed space-y-4">
+          <p>
+            Placeholder text: Expand on your vision for families, collaboration, and long-term
+            impact.
+          </p>
+          <p>
+            Placeholder text: Share goals for growth, connection, and student outcomes.
+          </p>
+        </div>
+
+        <button onclick="toggleExpand('visionMore')"
+          class="mt-6 px-6 py-3 rounded-lg font-semibold shadow
+                 bg-[var(--gold-honey)] text-[var(--teal-ocean)]
+                 hover:bg-yellow-400 transition">
+          Read More
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function toggleExpand(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
