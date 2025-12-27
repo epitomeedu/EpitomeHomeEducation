@@ -308,16 +308,23 @@
   <a href="https://square.link/u/L8TsrbYo" target="_blank" 
     class="mt-3 inline-block text-sm text-white btn-gold px-4 py-2 rounded"> 
     Pay Enrollment Fees
-    
-  <div class="quick-access-item">
-  <button onclick="openModal('waiverPdfModal')"
-          class="inline-block text-sm text-white btn-gold px-4 py-2 rounded mt-3 hover:opacity-90 transition">
-    Waiver & Registration
-  </button>
-
-
-  </div>
+  </a>
+  <a href="Events.html?open=registration" 
+     class="inline-block text-sm text-white btn-gold px-4 py-2 rounded mt-3">
+    Open Registration Form
+  </a>
 </div>
+    
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get('open') === 'registration') {
+    window.addEventListener('load', () => {
+      openModal('waiverPdfModal');
+    });
+  }
+</script>
+
 
 </section>
 
@@ -494,5 +501,6 @@
 
 </body>
 </html>
+
 
 
