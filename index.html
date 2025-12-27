@@ -314,6 +314,16 @@
     Open Registration Form
   </a>
 </div>
+    
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get('open') === 'registration') {
+    window.addEventListener('load', () => {
+      openModal('waiverPdfModal');
+    });
+  }
+</script>
 
 
 </section>
