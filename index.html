@@ -218,22 +218,67 @@
 
 <!-- Quick Access Section -->
 <section id="enrollment" class="max-w-6xl mx-auto py-12 px-4">
-  <h2 class="accent text-3xl mb-6 text-center"
-    style="color: var(--gold-honey); font-weight: 400;">
+  <h2 class="accent text-3xl mb-6 text-center" style="color: var(--gold-honey); font-weight: 400;">
     Quick Access
   </h2>
 
   <div class="grid md:grid-cols-3 gap-4">
-    <!-- Application Form -->
+    <!-- APPLICATION FORM CARD -->
     <div class="p-4 bg-white rounded-lg shadow">
       <h3 class="font-semibold mb-2">Application Form</h3>
       <p>Download or request the enrollment application.</p>
+
       <button id="openAppModal" class="mt-3 inline-block text-sm text-white btn-gold px-4 py-2 rounded">
         Open Application Form
       </button>
+
+      <!-- Application Form Modal -->
+      <div id="appModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
+        <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 p-4 relative">
+          <button id="closeAppModal" class="absolute top-2 right-2 text-xl font-bold text-teal-400">✖</button>
+          <h2 class="text-xl font-semibold text-teal-600 mb-3">Admissions Application</h2>
+          <ul class="mb-4 list-disc list-inside text-left">
+            <li>Completed Admissions Application</li>
+            <li>Copy of Parent/Guardian Photo ID</li>
+            <li>Emergency Contact Registration</li>
+            <li>Signed Handbook & Waiver</li>
+            <li>Application Fee</li>
+            <li>First Month Tuition Payment</li>
+          </ul>
+
+          <a href="https://drive.google.com/uc?export=download&id=1g7y7_wt8tjv4cTCc8fZmC6l5vBTljRWq" target="_blank" class="mt-3 inline-block text-sm text-white btn-gold px-4 py-2 rounded">
+            Download PDF
+          </a>
+
+          <iframe src="https://drive.google.com/file/d/1g7y7_wt8tjv4cTCc8fZmC6l5vBTljRWq/preview" class="w-full h-[70vh] border mt-3"></iframe>
+        </div>
+      </div>
+
+      <script>
+        const openAppModal = document.getElementById('openAppModal');
+        const closeAppModal = document.getElementById('closeAppModal');
+        const appModal = document.getElementById('appModal');
+
+        openAppModal.addEventListener('click', () => {
+          appModal.classList.remove('hidden');
+          appModal.classList.add('flex');
+        });
+
+        closeAppModal.addEventListener('click', () => {
+          appModal.classList.add('hidden');
+          appModal.classList.remove('flex');
+        });
+
+        appModal.addEventListener('click', (e) => {
+          if (e.target === appModal) {
+            appModal.classList.add('hidden');
+            appModal.classList.remove('flex');
+          }
+        });
+      </script>
     </div>
 
-    <!-- Policies & Handbooks -->
+    <!-- POLICIES & HANDBOOKS CARD -->
     <div class="p-4 bg-white rounded-lg shadow">
       <h3 class="font-semibold mb-2">Policies & Handbooks</h3>
       <p>Parent & student handbooks are available online and as a downloadable PDF.</p>
@@ -242,134 +287,123 @@
       </a>
     </div>
 
-    <!-- Registration & Tuition -->
+    <!-- REGISTRATION & TUITION CARD -->
     <div class="p-4 bg-white rounded-lg shadow">
       <h3 class="font-semibold mb-2">Registration & Tuition</h3>
-      <button id="openRegistrationModal" class="mt-3 inline-block text-sm text-white btn-gold px-4 py-2 rounded">
+      <a href="https://square.link/u/L8TsrbYo" target="_blank" class="mt-3 inline-block text-sm text-white btn-gold px-4 py-2 rounded">
+        Pay Enrollment Fees
+      </a>
+
+      <button id="openRegModal" class="mt-3 inline-block text-sm text-white btn-gold px-4 py-2 rounded">
         Open Registration Form
       </button>
+
+      <!-- Registration Form Modal -->
+      <div id="regModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
+        <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 p-6 relative overflow-y-auto max-h-[90vh]">
+          <button id="closeRegModal" class="absolute top-2 right-2 text-xl font-bold text-teal-400">✖</button>
+          <h2 class="text-xl font-semibold text-teal-600 mb-3">Registration & Waiver Form</h2>
+
+          <div class="mb-4">
+            <label class="font-semibold">Waiver Document</label>
+            <iframe src="https://drive.google.com/file/d/1vim8fnXGIcAWv8oJ0w8tjuewmybbGsSV/preview" class="w-full h-[300px] border rounded"></iframe>
+          </div>
+
+          <!-- Web3Form Registration Form -->
+          <form id="registrationForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+            <input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
+            <input type="hidden" name="subject" value="New Registration Submission">
+            <input type="hidden" name="from_name" value="Epitome Education Website">
+            <input type="hidden" name="redirect" value="thankyou.html">
+            <input type="hidden" name="submission_date" value="">
+
+            <div>
+              <label class="font-semibold">Parent / Guardian Name</label>
+              <input type="text" name="parent_name" required class="w-full border rounded px-3 py-2">
+            </div>
+            <div>
+              <label class="font-semibold">Email</label>
+              <input type="email" name="email" required class="w-full border rounded px-3 py-2">
+            </div>
+
+            <div>
+              <label class="font-semibold">Child Name</label>
+              <input type="text" name="child_name" required class="w-full border rounded px-3 py-2">
+            </div>
+            <div>
+              <label class="font-semibold">Child Date of Birth</label>
+              <input type="date" name="child_dob" required class="w-full border rounded px-3 py-2">
+            </div>
+
+            <!-- Signature Pad -->
+            <div>
+              <label class="font-semibold">Digital Signature</label>
+              <canvas id="regSignature" class="border w-full h-40 rounded bg-white"></canvas>
+              <button type="button" onclick="clearRegSignature()" class="mt-2 text-sm underline text-red-500">
+                Clear Signature
+              </button>
+              <input type="hidden" name="signature_data" id="reg_signature_data">
+            </div>
+
+            <div>
+              <label class="flex items-start gap-3">
+                <input type="checkbox" name="enrollment_application_completed" value="Yes" required class="mt-1 accent-[var(--gold-honey)]">
+                <span class="text-sm">I confirm that I have completed and reviewed the <strong>Enrollment Application</strong>.</span>
+              </label>
+            </div>
+
+            <button type="submit" onclick="saveRegSignature()" class="px-6 py-3 btn-gold rounded-lg font-semibold shadow">
+              Submit Registration
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <script>
+        const openRegModal = document.getElementById('openRegModal');
+        const closeRegModal = document.getElementById('closeRegModal');
+        const regModal = document.getElementById('regModal');
+
+        openRegModal.addEventListener('click', () => {
+          regModal.classList.remove('hidden');
+          regModal.classList.add('flex');
+        });
+
+        closeRegModal.addEventListener('click', () => {
+          regModal.classList.add('hidden');
+          regModal.classList.remove('flex');
+        });
+
+        regModal.addEventListener('click', (e) => {
+          if(e.target === regModal){
+            regModal.classList.add('hidden');
+            regModal.classList.remove('flex');
+          }
+        });
+
+        // Signature pad
+        const regCanvas = document.getElementById("regSignature");
+        const regSignaturePad = new SignaturePad(regCanvas);
+
+        function clearRegSignature() {
+          regSignaturePad.clear();
+        }
+
+        function saveRegSignature() {
+          if (!regSignaturePad.isEmpty()) {
+            document.getElementById("reg_signature_data").value = regSignaturePad.toDataURL();
+          }
+        }
+
+        // Add submission date before submitting
+        document.getElementById("registrationForm").addEventListener("submit", () => {
+          saveRegSignature();
+          document.querySelector('input[name="submission_date"]').value = new Date().toLocaleString();
+        });
+      </script>
     </div>
   </div>
 </section>
-
-<!-- Registration & Waiver Modal -->
-<div id="registrationModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-start overflow-y-auto z-50">
-  <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 p-6 relative mt-12">
-    <button id="closeRegistrationModal" class="absolute top-2 right-2 text-xl font-bold text-teal-400">✖</button>
-    <h2 class="text-xl font-semibold text-teal-600 mb-4">Registration & Waiver Form</h2>
-    
-    <p class="mb-4 font-semibold text-sm text-red-500">
-      Please submit this form once per child.
-    </p>
-
-    <form id="registrationForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-      <input type="hidden" name="access_key" value="3f0f732d-c91c-44ec-b8f2-ef41a33d0574">
-      <input type="hidden" name="subject" value="New Registration & Waiver Submission">
-      <input type="hidden" name="from_name" value="Epitome Education Website">
-      <input type="hidden" name="redirect" value="thankyou.html">
-      <input type="hidden" name="submission_date" value="">
-
-      <!-- Parent / Guardian Info -->
-      <div>
-        <label class="font-semibold">Parent / Guardian Name</label>
-        <input type="text" name="parent_name" required class="w-full border rounded px-3 py-2">
-      </div>
-
-      <div>
-        <label class="font-semibold">Email</label>
-        <input type="email" name="email" required class="w-full border rounded px-3 py-2">
-      </div>
-
-      <div>
-        <label class="font-semibold">Phone Number</label>
-        <input type="tel" name="phone" required class="w-full border rounded px-3 py-2">
-      </div>
-
-      <!-- Child Info -->
-      <div>
-        <label class="font-semibold">Child Name</label>
-        <input type="text" name="child_name" required class="w-full border rounded px-3 py-2">
-      </div>
-
-      <div>
-        <label class="font-semibold">Date of Birth</label>
-        <input type="date" name="child_dob" required class="w-full border rounded px-3 py-2">
-      </div>
-
-      <div>
-        <label class="font-semibold">Additional Notes / Allergies</label>
-        <textarea name="child_notes" class="w-full border rounded px-3 py-2"></textarea>
-      </div>
-
-      <!-- Waiver Document -->
-      <div>
-        <label class="font-semibold">Waiver & Emergency Release</label>
-        <iframe src="https://drive.google.com/file/d/1vim8fnXGIcAWv8oJ0w8tjuewmybbGsSV/preview" class="w-full h-[300px] border rounded mb-2"></iframe>
-      </div>
-
-      <!-- Signature Pad -->
-      <div>
-        <label class="font-semibold">Digital Signature</label>
-        <canvas id="registrationSignature" class="border w-full h-40 rounded bg-white"></canvas>
-        <button type="button" onclick="clearRegistrationSignature()" class="mt-2 text-sm underline text-red-500">
-          Clear Signature
-        </button>
-        <input type="hidden" name="signature_data" id="registration_signature_data">
-      </div>
-
-      <button type="submit" onclick="saveRegistrationSignature()" class="px-6 py-3 btn-gold rounded-lg font-semibold shadow">
-        Submit Form
-      </button>
-    </form>
-  </div>
-</div>
-
-<!-- Registration Modal Script -->
-<script>
-  const openRegBtn = document.getElementById('openRegistrationModal');
-  const closeRegBtn = document.getElementById('closeRegistrationModal');
-  const regModal = document.getElementById('registrationModal');
-
-  openRegBtn.addEventListener('click', () => {
-    regModal.classList.remove('hidden');
-    regModal.classList.add('flex');
-  });
-
-  closeRegBtn.addEventListener('click', () => {
-    regModal.classList.add('hidden');
-    regModal.classList.remove('flex');
-  });
-
-  regModal.addEventListener('click', (e) => {
-    if (e.target === regModal) {
-      regModal.classList.add('hidden');
-      regModal.classList.remove('flex');
-    }
-  });
-</script>
-
-<!-- Signature Pad Script -->
-<script>
-  const regCanvas = document.getElementById("registrationSignature");
-  const regSignaturePad = new SignaturePad(regCanvas);
-
-  function clearRegistrationSignature() {
-    regSignaturePad.clear();
-  }
-
-  function saveRegistrationSignature() {
-    if (!regSignaturePad.isEmpty()) {
-      document.getElementById("registration_signature_data").value = regSignaturePad.toDataURL();
-    }
-  }
-
-  document.getElementById("registrationForm").addEventListener("submit", () => {
-    saveRegistrationSignature();
-    document.querySelector('input[name="submission_date"]').value = new Date().toLocaleString();
-  });
-</script>
-
-
 
 
   <!-- ENROLLMENT PAGE SECTION -->
