@@ -290,7 +290,41 @@
    onclick="event.stopPropagation();">
   View Handbook
 </a>
-      
+
+      <!-- Handbook Modal -->
+<div id="handbookModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
+  <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 p-4 relative">
+    <!-- Close Button -->
+    <button id="closeHandbookModal" class="absolute top-2 right-2 text-xl font-bold text-teal-400">✖</button>
+    <h2 class="text-xl font-semibold text-teal-600 mb-4">Parent & Student Handbook</h2>
+    <!-- PDF Embed -->
+    <iframe src="https://drive.google.com/file/d/1g7y7_wt8tjv4cTCc8fZmC6l5vBTljRWq/preview" 
+            class="w-full h-[70vh] border rounded"></iframe>
+  </div>
+</div>
+<script>
+const openHandbookModal = document.getElementById('openHandbookModal');
+const handbookModal = document.getElementById('handbookModal');
+const closeHandbookModal = document.getElementById('closeHandbookModal');
+
+openHandbookModal.addEventListener('click', () => {
+  handbookModal.classList.remove('hidden');
+  handbookModal.classList.add('flex');
+});
+
+closeHandbookModal.addEventListener('click', () => {
+  handbookModal.classList.add('hidden');
+  handbookModal.classList.remove('flex');
+});
+
+handbookModal.addEventListener('click', (e) => {
+  if (e.target === handbookModal) {
+    handbookModal.classList.add('hidden');
+    handbookModal.classList.remove('flex');
+  }
+});
+</script>
+
     </div>
 
     <!-- REGISTRATION & TUITION CARD -->
