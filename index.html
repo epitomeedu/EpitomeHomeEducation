@@ -654,6 +654,48 @@ handbookModal.addEventListener('click', (e) => {
   });
 </script>
 
+  <!-- Upcoming Events Scroll Menu -->
+<section id="upcoming-events" class="max-w-6xl mx-auto py-12 px-4">
+  <h2 class="text-2xl font-bold text-teal-600 mb-4">Upcoming Events (Next 10 Days)</h2>
+
+  <div class="overflow-y-auto max-h-80 border rounded-lg p-4 bg-white shadow">
+    <ul id="eventsList" class="space-y-3 text-teal-800">
+      <!-- Events will be populated here -->
+    </ul>
+  </div>
+</section>
+
+<script>
+  // ---- Enter your events here ----
+  const events = [
+    { date: '2026-01-06', name: 'Primary Classroom Workshop' },
+    { date: '2026-01-07', name: 'Parent-Teacher Check-in' },
+    { date: '2026-01-08', name: 'Lower Elementary Reading Circle' },
+    { date: '2026-01-09', name: 'Science Lab Exploration' },
+    { date: '2026-01-10', name: 'Art & Craft Day' },
+    { date: '2026-01-11', name: 'Music Hour' },
+    { date: '2026-01-12', name: 'Field Trip to Museum' },
+    { date: '2026-01-13', name: 'Workshop: Storytelling' },
+    { date: '2026-01-14', name: 'Math Challenge Day' },
+    { date: '2026-01-15', name: 'Parent Evening Info Session' }
+  ];
+
+  const today = new Date();
+  const eventsList = document.getElementById('eventsList');
+
+  events.forEach(event => {
+    const eventDate = new Date(event.date);
+
+    // Only show events from today onwards
+    if (eventDate >= today) {
+      const li = document.createElement('li');
+      li.classList.add('p-3', 'border-b', 'border-gray-200', 'rounded', 'hover:bg-green-50', 'transition');
+      li.innerHTML = `<strong>${event.date}</strong> - ${event.name}`;
+      eventsList.appendChild(li);
+    }
+  });
+</script>
+
 </section>
 
 <!-- Contact / Footer -->
