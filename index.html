@@ -617,103 +617,106 @@ handbookModal.addEventListener('click', (e) => {
 </section>
 
 <!-- Events -->
+<!-- EVENTS -->
 <section id="events" class="max-w-6xl mx-auto py-12 px-4">
   <h2 class="text-2xl font-bold text-teal-ocean mb-4">Epitome Events</h2>
-  <p>We host frequent workshops, events and community activities. Our calendar of events is updated the last week of every month for the following month.</p>
+  <p>We host frequent workshops, events and community activities. Below are upcoming events:</p>
 
-  <button id="openPdfModal" class="btn-gold px-4 py-2 rounded mt-4">View Full PDF</button>
+  <!-- Button to open modal -->
+  <button id="openEventsModal" class="mt-4 px-4 py-2 btn-gold rounded text-sm text-white">
+    View Full Event Details
+  </button>
 
-<div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
-  <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 p-4 relative">
-    <button id="closePdfModal" class="absolute top-2 right-2 text-teal-600 text-xl font-bold">✖</button>
-    <h2 class="text-xl font-semibold text-teal-600 mb-4">Current PDF</h2>
-    <iframe src="https://drive.google.com/file/d/1I_eC6Zkc4WWpUCuhFsopiJBIHjaLNCoa/view?usp=drivesdk" class="w-full h-[70vh] border rounded"></iframe>
+  <!-- Scrollable 10-day event menu -->
+  <div id="eventMenu" class="mt-6 max-h-64 overflow-y-auto border border-gray-200 rounded">
+    <ul class="divide-y divide-gray-200">
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 6</span>
+        <span class="event-name">Parent Workshop: Homeschool Strategies</span>
+      </li>
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 7</span>
+        <span class="event-name">Community Meet & Greet</span>
+      </li>
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 8</span>
+        <span class="event-name">Elementary Art Class</span>
+      </li>
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 9</span>
+        <span class="event-name">Science Lab: Volcanoes</span>
+      </li>
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 10</span>
+        <span class="event-name">Parent Q&A Session</span>
+      </li>
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 11</span>
+        <span class="event-name">Lower Elementary Field Trip Prep</span>
+      </li>
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 12</span>
+        <span class="event-name">Primary Classroom Storytelling</span>
+      </li>
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 13</span>
+        <span class="event-name">Workshop: Creative Writing</span>
+      </li>
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 14</span>
+        <span class="event-name">Community Service Project</span>
+      </li>
+      <li class="event-item flex justify-between p-3 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
+        <span class="event-date font-semibold">Jan 15</span>
+        <span class="event-name">Elementary Math Fun Day</span>
+      </li>
+    </ul>
   </div>
-</div>
+
+  <!-- Events Modal -->
+  <div id="eventsModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
+    <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 p-4 relative">
+      <button id="closeEventsModal" class="absolute top-2 right-2 text-xl font-bold text-teal-600">✖</button>
+      <h2 class="text-xl font-semibold text-teal-600 mb-4">Upcoming Events PDF</h2>
+      <iframe src="https://drive.google.com/file/d/1c4cKuiLTBtegajROPWguicRoJedWw5pf/preview" 
+              class="w-full h-[70vh] border rounded"></iframe>
+    </div>
+  </div>
+</section>
 
 <script>
-  const openPdfModal = document.getElementById('openPdfModal');
-  const pdfModal = document.getElementById('pdfModal');
-  const closePdfModal = document.getElementById('closePdfModal');
+  // Modal open/close logic
+  const openEventsBtn = document.getElementById('openEventsModal');
+  const eventsModal = document.getElementById('eventsModal');
+  const closeEventsBtn = document.getElementById('closeEventsModal');
 
-  openPdfModal.addEventListener('click', () => {
-    pdfModal.classList.remove('hidden');
-    pdfModal.classList.add('flex');
+  openEventsBtn.addEventListener('click', () => {
+    eventsModal.classList.remove('hidden');
+    eventsModal.classList.add('flex');
   });
 
-  closePdfModal.addEventListener('click', () => {
-    pdfModal.classList.add('hidden');
-    pdfModal.classList.remove('flex');
+  closeEventsBtn.addEventListener('click', () => {
+    eventsModal.classList.add('hidden');
+    eventsModal.classList.remove('flex');
   });
 
-  pdfModal.addEventListener('click', e => {
-    if(e.target === pdfModal) {
-      pdfModal.classList.add('hidden');
-      pdfModal.classList.remove('flex');
-    }
+  eventsModal.addEventListener('click', e => {
+    if (e.target === eventsModal) closeEventsBtn.click();
   });
 </script>
-
-  <!-- Upcoming Events Menu -->
-<div id="upcomingEvents" class="max-w-6xl mx-auto py-6 px-4 bg-white rounded-lg shadow mt-4">
-  <h3 class="text-xl font-semibold text-teal-ocean mb-2">Upcoming Events (10 days)</h3>
-  <ul id="eventsList" class="space-y-1"></ul>
-</div>
 
 <style>
-  /* Teal text, gold glowing hover, no hover fill */
-  #eventsList li {
-    color: var(--teal-ocean);
+  #eventMenu .event-item {
+    color: #368678; /* Teal text */
     font-family: 'Quattrocento', serif;
-    font-size: 16px;
-    padding: 5px 0;
-    transition: all 0.2s ease;
-    cursor: default;
   }
 
-  #eventsList li:hover {
-    color: var(--gold-honey);
-    text-shadow: 0 0 5px var(--gold-honey);
-    background: none;
+  #eventMenu .event-item:hover {
+    color: #F5D66D; /* Gold glow */
+    text-shadow: 0 0 8px #F5D66D;
+    background-color: transparent; /* Remove hover fill */
   }
 </style>
-
-<script>
-  const eventsList = document.getElementById('eventsList');
-
-  // Example events (replace titles as you like)
-  const eventsArray = [
-    "Math Workshop",
-    "Science Exploration",
-    "Art & Craft Hour",
-    "Outdoor Adventure",
-    "Reading Circle",
-    "Music Jam",
-    "Cooking Class",
-    "History Exploration",
-    "Coding Hour",
-    "Community Service"
-  ];
-
-  function populateEvents() {
-    eventsList.innerHTML = ""; // clear previous
-    const today = new Date();
-
-    for (let i = 0; i < 10; i++) {
-      const eventDate = new Date(today);
-      eventDate.setDate(today.getDate() + i);
-      const options = { month: 'short', day: 'numeric' };
-      const dateStr = eventDate.toLocaleDateString(undefined, options);
-      const eventTitle = eventsArray[i] || "TBA"; // placeholder if empty
-
-      const li = document.createElement('li');
-      li.textContent = `${dateStr}: ${eventTitle}`;
-      eventsList.appendChild(li);
-    }
-  }
-
-  populateEvents();
-</script>
 
 
 </section>
