@@ -654,47 +654,67 @@ handbookModal.addEventListener('click', (e) => {
   });
 </script>
 
-  <!-- Upcoming Events Scroll Menu -->
-<section id="upcoming-events" class="max-w-6xl mx-auto py-12 px-4">
-  <h2 class="text-2xl font-bold text-teal-600 mb-4">Upcoming Events (Next 10 Days)</h2>
+  <!-- Upcoming Events Menu (paste this below your Events modal button) -->
+<div id="upcomingEvents" class="max-w-6xl mx-auto py-6 px-4 bg-white rounded-lg shadow mt-4">
+  <h3 class="text-xl font-semibold text-teal-ocean mb-2">Upcoming Events (10 days)</h3>
+  <ul id="eventsList" class="space-y-1"></ul>
+</div>
 
-  <div class="overflow-y-auto max-h-80 border rounded-lg p-4 bg-white shadow">
-    <ul id="eventsList" class="space-y-3 text-teal-800">
-      <!-- Events will be populated here -->
-    </ul>
-  </div>
-</section>
+<style>
+  /* Teal text, gold glowing hover, no hover fill */
+  #eventsList li {
+    color: var(--teal-ocean);
+    font-family: 'Quattrocento', serif;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: all 0.2s ease;
+    cursor: default;
+  }
+
+  #eventsList li:hover {
+    color: var(--gold-honey);
+    text-shadow: 0 0 5px var(--gold-honey);
+    background: none;
+  }
+</style>
 
 <script>
-  // ---- Enter your events here ----
-  const events = [
-    { date: '2026-01-06', name: 'Primary Classroom Workshop' },
-    { date: '2026-01-07', name: 'Parent-Teacher Check-in' },
-    { date: '2026-01-08', name: 'Lower Elementary Reading Circle' },
-    { date: '2026-01-09', name: 'Science Lab Exploration' },
-    { date: '2026-01-10', name: 'Art & Craft Day' },
-    { date: '2026-01-11', name: 'Music Hour' },
-    { date: '2026-01-12', name: 'Field Trip to Museum' },
-    { date: '2026-01-13', name: 'Workshop: Storytelling' },
-    { date: '2026-01-14', name: 'Math Challenge Day' },
-    { date: '2026-01-15', name: 'Parent Evening Info Session' }
-  ];
-
-  const today = new Date();
   const eventsList = document.getElementById('eventsList');
 
-  events.forEach(event => {
-    const eventDate = new Date(event.date);
+  // Example events (replace titles as you like)
+  const eventsArray = [
+    "Math Workshop",
+    "Science Exploration",
+    "Art & Craft Hour",
+    "Outdoor Adventure",
+    "Reading Circle",
+    "Music Jam",
+    "Cooking Class",
+    "History Exploration",
+    "Coding Hour",
+    "Community Service"
+  ];
 
-    // Only show events from today onwards
-    if (eventDate >= today) {
+  function populateEvents() {
+    eventsList.innerHTML = ""; // clear previous
+    const today = new Date();
+
+    for (let i = 0; i < 10; i++) {
+      const eventDate = new Date(today);
+      eventDate.setDate(today.getDate() + i);
+      const options = { month: 'short', day: 'numeric' };
+      const dateStr = eventDate.toLocaleDateString(undefined, options);
+      const eventTitle = eventsArray[i] || "TBA"; // placeholder if empty
+
       const li = document.createElement('li');
-      li.classList.add('p-3', 'border-b', 'border-gray-200', 'rounded', 'hover:bg-green-50', 'transition');
-      li.innerHTML = `<strong>${event.date}</strong> - ${event.name}`;
+      li.textContent = `${dateStr}: ${eventTitle}`;
       eventsList.appendChild(li);
     }
-  });
+  }
+
+  populateEvents();
 </script>
+
 
 </section>
 
