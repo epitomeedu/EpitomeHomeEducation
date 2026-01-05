@@ -621,10 +621,38 @@ handbookModal.addEventListener('click', (e) => {
   <h2 class="text-2xl font-bold text-teal-ocean mb-4">Epitome Events</h2>
   <p>We host frequent workshops, events and community activities. Our calendar of events is updated the last week of every month for the following month.</p>
 
-  <img 
-    src="https://raw.githubusercontent.com/epitomeedu/EpitomeHomeEducation/912f859d4252accd0c6a0f8b5e74a2f24e5bbd12/Screen%20Shot%202025-12-23%20at%203.25.10%20PM.png" 
-    alt="Event Image" 
-    class="w-full h-auto rounded-lg shadow-lg">
+  <button id="openPdfModal" class="btn-gold px-4 py-2 rounded mt-4">View Full PDF</button>
+
+<div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-60 hidden justify-center items-center z-50">
+  <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-1/2 p-4 relative">
+    <button id="closePdfModal" class="absolute top-2 right-2 text-teal-600 text-xl font-bold">✖</button>
+    <h2 class="text-xl font-semibold text-teal-600 mb-4">Current PDF</h2>
+    <iframe src="https://drive.google.com/file/d/1I_eC6Zkc4WWpUCuhFsopiJBIHjaLNCoa/view?usp=drivesdk" class="w-full h-[70vh] border rounded"></iframe>
+  </div>
+</div>
+
+<script>
+  const openPdfModal = document.getElementById('openPdfModal');
+  const pdfModal = document.getElementById('pdfModal');
+  const closePdfModal = document.getElementById('closePdfModal');
+
+  openPdfModal.addEventListener('click', () => {
+    pdfModal.classList.remove('hidden');
+    pdfModal.classList.add('flex');
+  });
+
+  closePdfModal.addEventListener('click', () => {
+    pdfModal.classList.add('hidden');
+    pdfModal.classList.remove('flex');
+  });
+
+  pdfModal.addEventListener('click', e => {
+    if(e.target === pdfModal) {
+      pdfModal.classList.add('hidden');
+      pdfModal.classList.remove('flex');
+    }
+  });
+</script>
 
 </section>
 
